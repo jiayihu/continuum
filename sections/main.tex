@@ -7,8 +7,7 @@ A flurry of organic changes and infrastructure trends has driven this vast trans
 The most notable ones, for the purposes of this paper, can be summarised as follows.
 The sharing of compute and networking capabilities -- known as the Cloud Computing paradigm -- has given individuals and enterprises alike access to practically unlimited amounts of virtualised infrastructure resources. 
 The dramatic improvement to mobile connectivity, for ubiquity, reliability, and affordability, has allowed anyone to access the Internet from anywhere and at anytime.
-%as shown in the bottom-right corner of Figure~\ref{fig:continuum}.
-The massive boost and evolution of mobile computing, which has led to the emergence of richer client-side web apps, and is expected to grow further with the uptake of 5G connectivity.
+The massive boost and evolution of mobile computing, which has led to the emergence of richer client-side web apps, is expected to grow further with the uptake of 5G connectivity.
 By the end of 2026, Ericsson estimates that over 3.5 billion people,  $45$/\% per cent of the world's population, will have a 5G coverage subscription \cite{ericsson-5g}, while
 everyday objects ("things") are able to easily  connect to the Internet and to each other. 
 As such "things" comprise a multitude of heterogeneous devices ranging from consumer devices, like mobile phones and wearables, to industrial sensors and actuators \cite{chen2018edge}, this step of evolution has given rise to the Internet of Things (IoT), which spans 
@@ -17,7 +16,6 @@ smart transportation systems, grids \cite{mugarza2019dynamic}, and even cities \
 There are two common denominators to this diverse range of devices. First, they operate at the leaf nodes, the outer edge, of the Internet network. 
 Second, quoting~\cite{whitmore2015internet}, they are "equipped with identifying, sensing, networking and processing capabilities that will allow them to communicate with one another and with other devices and services over the Internet to achieve some objective".
 It is thus natural that as consumers, we want our Internet-capable devices (e.g., mobile devices, thermostats, electric vehicles) to adapt seamlessly to our changing lives and expectations, regardless of location \cite{beckman2020harnessing}.
-% Besides, our capacity for collecting data is expanding dramatically. Nevertheless, our ability to manage, manipulate, and analyse this data to transform it into information and act upon it has not kept the pace \cite{abdelbaky2017computing}. Data sources and the size of the generated information are growing exponentially. They have outpaced the Internet ability to transport this data in a reliable and timely manner to the cloud. IoT applications demand a short response time, involve private data, and produce a large quantity of data which could be a heavy load for the network transport layer. Cloud computing and Internet infrastructure are not capable of supporting these applications and their exploding multitude.
 This notion gives rise to a vision where all computing will aggregate into a pervasive seamless continuum that will allow developing, deploying, using and managing any kind of conceivable as-a-service application. 
 Numerous use cases of such vision can be associated to a variety of application areas, from managing extreme events (e.g. environmental monitoring \cite{brzoza2016embedded}) to optimising everyday processes (e.g. manufacturing \cite{chen2018edge}) and improving life quality (e.g. healthcare \cite{pace2018edge} and smart cities \cite{he2017multitier}).
 Figure~\ref{fig:continuum} attempts to capture said vision pictorially. 
@@ -34,19 +32,14 @@ The Continuum of Computing is the manifestation of new approaches that aggregate
 Depending on the use case and service level requirements, user applications may require processing and storage locally (Edge computing), in the Cloud, or somewhere in between. Fog computing \cite{fog-computing} is the term coined by the research community to identify computational resources situated at a few, usually one, hop away from end users. 
 Figure~\ref{fig:continuum} depicts Fog nodes as base stations, which users connect to in everyday activities.
 
-% This trend lays the groundwork for novel and ubiquitous services in a wide range of application domains. To cite Haller et al. \cite{haller2008internet}, this paper believes that we are close to "a world where physical objects are seamlessly integrated into the information network, and where the physical objects can become active participants in business processes. Services are available to interact with these 'smart objects' over the Internet, query their state and any information associated with them, taking into account security and privacy issues."
-
 This paper puts forward a vision that follows naturally from the previous premises - the \textbf{Continuum of Computing} - a ubiquitous platform where distributed on-demand resources and services on the whole computing continuum are dynamically provisioned to support different ranging services and released with minimal management effort.
 
 There will be pervasive service platforms anywhere the user is and a multitude of services available over the Internet. The service providers will provide services, and consumers will use them to accomplish any high-level application-specific goal. Services will be composed based on other existing services, leveraging the principle of reuse. These services' granularity will be very different, ranging from high-level business to low-level sensing provided by the Internet of Things.
 
 In essence, the Continuum is constituted by software and hardware resources provided as-a-service, which can be delivered anywhere the user is, independent of their respective location. 
 The Continuum must facilitate the elastic provisioning of the end-to-end service delivery infrastructures, obviously virtualised to allow scaling as a function of user demand and service requirements. 
-%End-to-end network configuration is a primary example of a virtual capability that needs to be scaled elastically according to the execution's dynamics. 
 The Continuum must behave as a fluid, which continuously adapts its shapes to fit the environment, as first described in \cite{latre2014fluid}. Figure~\ref{fig:continuum} depicts the three domains of computing (Cloud, Fog, and Edge) immersed in the fluid continuum, where computation may freely flow like water. 
 This freedom of movement exceeds the common practice of merely connecting the network nodes to allow computation to happen at predetermined locations in the computing space.
-
-% However, this vision goes beyond the traditional elasticity of clouds. In addition to computational, network and storage resources, the managed capabilities include end-to-end network configuration, high-level service and device functionalities.
 
 The notion of "Continuum of Computing" is not entirely novel: the authors of \cite{latre2014fluid} did envision a Fluid Internet, which "seamlessly provisions virtualised infrastructure capabilities, adapting the delivery substrate to the dynamic requirements of services and users, much like a fluid adapting to fit its surroundings". 
 The authors of \cite{abdelbaky2017computing} present the notion of computing in the continuum as well, as "a fluid ecosystem where distributed resources and services are programmatically aggregated on-demand to support emerging data-driven application workflows". 
@@ -64,12 +57,7 @@ The remainder of this paper is organised as follows. Section \ref{sec:problem} d
 
 In the past decade and now more than ever, Cloud Computing \cite{mell2011nist} has enabled users to perform computing tasks utilising physically-remote resources, thus crossing seamlessly the border of individual physical devices.
 
-% A popular definition of cloud computing \cite{mell2011nist} is "a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction."
-
-% The cloud architecture can be split into four layers: datacentre (hardware), infrastructure, platform, and application \cite{zhang2010cloud}. The resulting model is divided into three types of service: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Accordingly, to the developers' needs, IaaS can be chosen if one wishes to customise every aspect of how an application gets deployed and executed, leaving the responsibility for provisioning the hardware or virtual machines to the cloud provider. Otherwise, in PaaS and SaaS, the developers have no control over the infrastructure but can access prepackaged components or complete applications, respectively. Thanks to such flexibility in the service layer, the cloud computing paradigm has been highly successful. By 2023, Gartner predicts that 40\% of all enterprise workloads will be deployed in cloud infrastructure and platform services, up from 20\% in 2020 \cite{gartner-cloud-edge}.
-
-Conventional single-provider infrastructures hosting cloud services offer a wealth of benefits (e.g. affordability, scalability, and efficiency) but not without challenges. On the one hand, the energy demand of large data centres is huge. On the other hand, all that is centralised is as vulnerable as a gigantic single point of failure. 
-%as with any other centralised model of computing, the issues resulting from sudden interruption would be adverse in terms of downtime cost.
+Conventional single-provider infrastructures hosting cloud services offer a wealth of benefits (e.g. affordability, scalability, and efficiency) but not without challenges. On the one hand, the energy demand of large data centres is huge. On the other hand, all that is centralised is as vulnerable as a gigantic single point of failure.
 
 The other challenge with cloud-only solutions is the inherent latency of transferring and storing data away from their source. 
 Data centers are geographically distant from data sources, especially so when they are generated at Edge locations. 
@@ -88,14 +76,11 @@ With these premises, the goal of achieving cloud-like capabilities across the Co
 On the pro side, it would offer on-demand virtualised storage and compute capabilities able to augment IoT devices and components with scarce resources. 
 On the cons side, it should be noted that scaling Fog and Edge infrastructures is complex, slow, and intrinsically limited, owing to factors such as heterogeneity, network instability and difficulty to predict capacity needs in advance~\cite{nygren2010akamai}. 
 While the business risk of under-provisioning would not be tenable for Fog-and-Edge providers, responding by over-provisioning would not be sustainable either. 
-% means wasting money on unused infrastructure \cite{nygren2010akamai}.  Moreover, user demand at the edge can be very often spiky \cite{nygren2010akamai}, meaning that companies would need to provision for anomalous peaks like gatherings and events, investing in significant infrastructure that sits underutilised most of the time. Overprovisioning also has an environmental cost when underutilised infrastructure consumes significant amounts of power.
 
 On the whole, however, applying the as-a-service model of the Cloud to the Fog and Edge is attractive as it allows businesses to decrease the required capital expenditure and frees them from the need to invest in infrastructure. Businesses can rent resources according to their needs and only pay for the usage \cite{botta2016integration}. Moreover, it reduces operating costs, as service providers do not have to provision capacities according to maximum peak load. Resources are released when service demand is low.
 
 At the same time, the Cloud can benefit from the Fog and Edge joining the Continuum, by reaching out to physical things in a more distributed and dynamic manner, and delivering new services in a large number of real-world scenarios. 
-Such an extension will impact future application development, where this new flow of information gathering, processing, and transmission will generate new challenges, which we discuss in Section~\ref{sec:challenges}.
-
-%\subsection{Decentralization}
+Such an extension will impact future application development, where this new flow of information gathering, processing, and transmission will generate new challenges, which we discuss in Section~\ref{sec:challenges}.s
 
 Highly distributed networks are the most effective architecture for the Continuum, particularly as services become more complex and more bandwidth-hungry. Although often referred to as a single entity, the Internet is actually composed of a variety of different networks. The net result is that content generated at the edge must travel over multiple networks to reach its centrally hosted data centre.
 
@@ -138,59 +123,12 @@ Once again, the key is the trade-off between compute energy and transmission ene
 
 Such dynamism to determine the best location for the computation to happen shows that the vision of a computing continuum requires a seamless movement of information and computation. Besides, the computing continuum is not one form of computing (e.g. edge computing) supplanting another (e.g. cloud computing), but an evolution to harness the entire computing space as a whole.
 
-% Some trending computing models relevant to the decentralisation above are now presented.
-
-% \subsubsection{Fog Computing}
-
-% Fog computing \cite{fog-computing} is a decentralised computing infrastructure that is used mainly as a complement to cloud computing. It leverages the compute resources at the edge network and brings the computational processing closer to the data source by offloading workload to edge nodes from cloud data centres. The network nodes near the edge providing these resources are called fog nodes, and they are usually a single hop away from the end-users. An example of such nodes is the base stations depicted in the bottom-right illustration in Fig. \ref{fig:continuum}.
-
-% Overall, any device with computing, storage, and network connectivity can constitute a fog node. Examples include switches and routers inside buildings (pictured in the smart city in Fig. \ref{fig:continuum}), industrial controllers, embedded servers and video surveillance cameras \cite{jang2018application}. In recent years, the spread of fog computing has been facilitated by the availability of suitable hardware in small, affordable, low-power computers (e.g. Raspberry Pi \cite{raspberry}).  Improvements in virtualisation technologies that enable slicing resources between different users to provide isolated environments (see Section §\ref{sec:virtualisation}) have also helped.
-
-% The Cloudlet \cite{satyanarayanan2009case} architecture is one of the first approaches that offer an example of fog computing with virtual machine (VM) techniques. Its computing power is much less than a conventional cloud infrastructure as cloudlets are composed of less powerful processors and are significantly smaller in size.
-
-% \subsubsection{Mobile Edge Computing}
-
-% Edge computing \cite{shi2016edge} denotes any computing and network resource that is located only at the extreme edge of the network. The rationale of edge computing is that computing should happen in the proximity of data sources, thus ideally \emph{at} the data source, eliminating the costly data transfer to a remote data centre. The result significantly improves Quality of Service (QoS), similar to fog computing, and the end-user earns considerable network latency reduction and bandwidth consumption.
-
-% When the end-users are mobile devices, edge computing is referred to as mobile edge computing (MEC) \cite{beck2014mobile} as well. In contrast to the broader term edge computing, MEC focuses on co-locating computing and storage resources at base cellular networks stations. Being co-located at base stations, MEC servers' computing and storage resources are available close to mobile users like smartphones and smart vehicles and can support mobility between cellular cells. MEC is seen as a promising approach to increase the quality of experience in cellular networks and a natural direction for the evolution to 5G networks \cite{yousaf2017nfv}.
-
-% \subsubsection{Serverless Computing}
-
-% Serverless computing \cite{jonas2019cloud} involves building, running and providing applications and services without considering the server-side. "Serverless" does not mean that there is no server usage, but rather that the application developers focus on the application itself rather than what happens on the physical infrastructure.
-
-% Serverless computing is synonymous with Function-as-a-Service (FaaS) and event-based programming as underlying provisioning and instantiation of the resources will happen only when necessary and not all the time. Notably, provisioning happens on the fly when an event triggers the execution of a function. In particular, FaaS triggers a server's infrastructural provisioning only when a function is requested, then executes the expected operations and frees the resources above as soon as they are deemed to be not necessary.
-
-% The major benefits of this model for cloud consumers are increased scalability and applications' infrastructure independence, and lower costs. Similarly, cloud vendors also have strong incentives for services to be built on serverless architectures as opposed to following a fixed-price model for long-running VMs. VM deployments tend to be very static as users deploy them for long periods. In contrast, the FaaS computing model tends to offer more variation in memory and CPU utilisation. As a result, the serverless computation gives a better opportunity to optimise resource usage and bill users for function invocation and network utilisation.
-
-% Recently, the leading cloud vendors (e.g. Amazon and Microsoft) are putting effort into making it easier to integrate edge functionality into their clouds, mainly by providing serverless computing and tight integration with their other cloud services. As an example, AWS Lambda@Edge \cite{aws-lambda-edge} allows using serverless functions at the AWS edge location in response to CDN event to apply moderate computations. On the other hand, AWS Greengrass \cite{aws-greengrass}, and Azure IoT Edge \cite{azure-iot-edge} are commercial solutions specifically targeting serverless for IoT.
-
-% Recent works in the literature have argued the advantages of edge computing too. An instance, the authors of \cite{baresi2017empowering} present an augmented reality use case for mobile edge computing, in which computation and data-intensive tasks are offloaded from the devices to serverless functions at the edge, outperforming the cloud alternative up to 80\% in terms of throughput and latency.
-
 \section{The challenges ahead}
 \label{sec:challenges}
-
-% After discussing the decentralisation trend, this section presents the challenges in implementing such a vision. As an example, the heterogeneity of the connected devices is immense. It can be seen from different perspectives, such as computing performance, storage and network requirements, communication protocols, energy consumption, to name just a few. Such diversity poses questions about handling the virtualisation of the underlying resources and the nodes' interoperability. Both challenges are explored in Section §\ref{sec:virtualisation} and §\ref{sec:interoperability} respectively.
 
 Several challenges lay ahead in the realization of the Continuum. 
 Besides featuring extreme heterogeneity, in fact, the Edge most notably lacks support for service orientation, interoperability, orchestration, reliability, efficiency, availability, and security, which we consider paramount (yet, not exhaustive) enabling features. 
 We now briefly discuss each of them in isolation. 
-% To enable the Continuum, this paper identifies the following challenges as important ones to be addressed. The list should not be considered exhaustive by any means, nor the most significant ones. 
-% Dynamic network configuration and distributed persistent storage are two examples of critical technical challenges, which the author has not explored yet in his work.
-
-%Therefore, it is natural that many challenges in the Continuum's realisation overlap with open research problems in edge computing. At the same time, other issues are originated, or at least exacerbated, by the desire for holistic integration of cloud, fog, and edge computing.
-
-% \begin{enumerate}
-%     \item \emph{Context-sensitive service orientation}: as stated in the introduction of this paper, services must be treated as first-class citizens, allowing them to be dynamically placed and decoupling them from their location. Consumers should only be concerned with what they want to do and accomplish and providers with how that could be done and provided to the user. At the same time, services need to be aware of different aspects of the environment they are acting in, whereas today's services are rarely context-sensitive;
-%     \item \emph{Orchestration}: advanced orchestration systems are required to support the resource management of heterogeneous devices and be adapted to many applications running on the edge connected devices;
-%     \item \emph{Virtualisation}: the system has to provision resources and provide access to heterogeneous IoT resources and hardware such as GPUs. Besides, today's common practice in the cloud assumes enumerated resources and predictable computing capabilities. However, in the continuum, the capabilities and numbers of components change dramatically over time and require virtualisation solutions to provide a reliable service. \linebreak Lastly, edge computing must support multi-tenancy, and the virtualisation techniques are likely to be asked to deliver execution environments even more hardened than in cloud centres;
-%     \item \emph{Dynamic configuration}: dynamic configuration on constrained devices would allow them to actively participate in the continuum and dynamically adapt to environmental context changes based on the application requirements. The benefits are increased accuracy in machine-learning predictions, lower response times and more flexible data transformation at the data source;
-%     \item \emph{Interoperability}: applications on a continuum should be able to amalgamate services and infrastructure from different locations seamlessly. Every node on the Internet should additionally expose a uniform interface to its resources and services;
-%     \item \emph{Portability and programmability}: developers should be provided with the languages and tools to program applications and services to run in such a dynamic environment without having to reinvent themselves;
-%     \item \emph{Mobility}: efficient migration of each application and service has to be supported from platform to platform and to follow the users' movements in the network (roaming);
-%     % \item \emph{Reliability}: services in the continuum could fail due to various reasons, notably at the edge. The establishment of reliable communication between nodes must be supported;
-%     \item \emph{Security and Privacy}: personal and sensitive user data are subjected to high risk while many users access Internet services from anywhere. Security and privacy matter even more when personal data may have to be stored closer to the users/devices to facilitate computing and processing on the edge or fog layer.
-%     % \item \emph{Energy efficiency}: obtaining energy efficiency in both data processing and transmission is an important open issue;
-% \end{enumerate}
 
 \paragraph{Context-sensitive service orientation}
 We deem service orientation the most appropriate style to organise and utilise distributed capabilities that may lie under the control of different ownership domains. 
@@ -199,9 +137,6 @@ We deem service orientation the most appropriate style to organise and utilise d
 A service-oriented model is centered around a service provider that publishes its service interface (i.e., how users may access the corresponding functionalities) via a service registry where consumers may locate it and use it to bind to the desired service provider \cite{haller2008internet}.
 
 The prime virtue of such a model is the loose coupling it earns for services, which are solely responsible for the logic and information that they encapsulate, agnostic of the composition in which they can be aggregated by higher-level providers, and placed behind well-defined interfaces and service contracts with corresponding constraints and policies.
-%The SOA reference model's central concept lies in services that provide access to capabilities to be exercised by following well-defined interfaces and a service contract with constraints and policies. This enables the loose coupling of services and minimisation of mutual dependencies.
-%
-%Services are provided by the service providers and used by others, the service consumers, a role usually taken on by application developers. Services may be composed based on other existing services, thereby adhering to the principle of reuse. They are responsible only for the logic and information they encapsulate, uniformly described and publicly retrievable via service discovery mechanisms. 
 This design is in stark contrast with the dominant practice of present day, where a multitude of ad-hoc programs are developed that are confined to single places of the network, and permanently fix the behavior of the associated devices \cite{beckman2020harnessing}.
 
 However, major limitations have to be overcome before services can be operated seamlessly and maintained agilely.  
@@ -210,48 +145,21 @@ First and foremost, the lack of vendor-neutral, trustworthy and widely accepted 
 
 Secondly, the lack of inter-operable support for composing higher-order services from lower-level ones. 
 Individual providers adopt their own conventions for interfaces and communication protocols: for example, Google Cloud Platform services heavily use Protocol Buffers \cite{protobuf}, a Google technology for serialising structured data, in their service APIs. 
-%For this reason, a significant effort will be required to uniformly provide the service semantics and interfaces in a comprehensible way for both humans and machines. 
 A plausible implementation of the Continuum would have to map high-level descriptions (e.g., flexible key-value stores) to vendor-specific implementations.
 
 Moreover, whereas services on the Internet of today are mute and unresponsive, future services should be communicative and reactive to their respective environments~\cite{haller2008internet}. 
 The current service interfaces in fact are ostensibly designed with human interaction in mind, thus being scarcely suited for machine-to-machine (M2M) discovery and interaction. 
 Recent REST community efforts have begun to address this need~\cite{openapi}.
 
-% \subsubsection{Service-oriented architectures}
-
-% The idea of service orientation can be partially traced back to the object-oriented programming (OOP) literature \cite{dragoni2017microservices}. However, the evolution of objects into services, and the relative comparisons, has to be treated carefully since the first focus on encapsulation and information hiding in a shared-memory scenario. In contrast, the second is built on the idea of independent deployment and asynchronous communication via well-defined interfaces. However, both paradigms share the common idea of componentisation.
-
-% The last decade has seen a further shift towards the concept of service first and the natural evolution to microservices afterwards. SOA has been introduced to harness distributed systems' complexity and integrate different software applications. In SOA, a service offers functionalities to other components, accessible via message passing. Services decouple their interfaces from their implementation.
-
-% This design is in striking contrast to monolithic architectures, where the application is composed of a single program, typically providing a user interface and data access through a database. However, monolithic architecture poses real challenges and difficulties when growing exponentially because of the need to scale up \cite{dragoni2017microservices}.
-
-% SOA is built around services designed to work in an orchestrated manner to modularise the system. It is more challenging to divide the application into multiple services, but it enables greater flexibility, extensibility and reusability of existing services for multiple use cases. The model's benefits are application modularity and service reusability \cite{lynn2020cloud}, which are both very important to enable a computing continuum. However, a major disadvantage is the complexity of orchestrating and monitoring all the services and the underlying infrastructure, especially when the project is complex and the components' amount is huge.
-
-% The first generation of SOA architectures defined daunting and nebulous requirements for services (e.g., discoverability and service contracts) \cite{dragoni2017microservices}, which hindered the adoption of the model. Microservices are the second iteration, introduced as a solution for the gaps in the SOA approach.
-
-% The microservices approach divides applications into more granular components by distributing them into small self-contained services. Each service implements and attends to separate business functions and capabilities to maintain independence from other services. They are mainly deployed in an automated manner, through a container (more on that in §\ref{sec:virtualisation}), and communication happens through REST APIs \cite{rest}, therefore making the impact of the programming language insignificant.
-
 In our vision of the Continuum, binding a consumer to a particular service interface should entail minimal direct interaction with the provider's infrastructure: the provider should have complete control of the service, relieving the customer from any associated cost of ownership.
-
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[width=\columnwidth]{figures/marketplace}
-%\caption{A digital service marketplace.}
-%\label{fig:marketplace}
-%\end{figure}
-
-%Furthermore, this architecture results in a system where various service implementations should already exist, maybe provided in the same fashion of a service marketplace (e.g. Shopify App Store \cite{shopify}). Figure~\ref{fig:marketplace} is a picture of such a digital service marketplace, where consumers can use not only Software-as-a-Service products like YouTube but also define their applications. The consumer himself does not have to be an expert and may use high-level languages to specify requirements, constraints and workflow to achieve arbitrary goals. Even the infrastructure's physical resources should not be consumer-aware, and there may be several diverse implementations to meet specific service demands. These implementations can differ in hardware type or service level requirements and could be characterised by different price and performance attributes.
 
 Finally, web services fit for the Continuum, hence deployable at the Edge, should be sensitive to the context of the environment in which they operate.
 The context awareness we envision would help implement local control loops and trigger specific actions on local events (such as sensor readings, for instance).
-
-% On this matter, the MEC architecture provides the advantage of data locality, which lets a given application store the context data only regarding the devices within the region covered by the base station. Such an advantage is two-fold: providing location-aware services is more accessible, and less data has to be persisted in each zone. For example, MEC servers in \cite{baresi2017empowering} can retrieve the machine learning features in an augmented reality scene, match them against a local database, and return the corresponding data (information about monuments, buildings and other points of interest) to the client application.
 
 \paragraph{Orchestration}
 
 The transition to the Continuum will require coordinating and scheduling the operation of myriads of distributed service components. The complexity of that endeavor will make orchestration essential, over and above the rating it enjoys from DevOps adopters~\cite{nygren2010akamai}. 
 Granted, orchestrating in the Continuum is especially challenging owing to the scale, heterogeneity and diversity of resource types, and the uncertainties of the underlying environments for resource capacity (e.g. bandwidth and memory), network failures, user access pattern (e.g., for quantity and location), and service life cycle.
-% A further concern caused by the inherent heterogeneity of resources is to devise pricing models that properly consider account locations, resource types, and sizes. %Considering such variables would enable, for instance, to dynamically provision resources of different pricing models to the cluster to satisfy application-specific needs with minimum cost.
 Extreme heterogeneity also hinders devising sound pricing models that reflect account locations, resource types, transport volumes, and service latency.
 
 Orchestrating services in the Continuum is a remarkable challenge, which encompasses technologies from a variety of fields, including wireless cellular networks, distributed systems, virtualization, platform management, and also requires mobility handover and service migration at local and global scales.
@@ -261,39 +169,30 @@ Orchestrating services in the Continuum is a remarkable challenge, which encompa
 
 The rapid pace of innovation in data centers and application platforms has transformed the way organizations build, deploy, and manage their online offering.
 Container-based virtualization, owing to its natural versatility and light unitary weight, has become the dominant solution for all seekers of elastic scalability.
-%The high costs of buying and maintaining large numbers of machines, and the fact that each was often under-utilised, led to a great leap forward in virtualisation.
-%Virtual Machine Monitors (VMM) \cite{rosenblum2005virtual} were born at the end of the 1960s as a software abstraction layer that partitions a hardware platform into one or more virtual machines (VM) to run existing software unmodified. Nowadays, however, a VMM is more a solution for security and reliability.
-% Functions like migration and security, which are difficult to achieve in modern operating systems, seem much better suited to implementation at the VMM layer. KVM (Kernel-based Virtual Machine) \cite{kvm} is an example of VMM built into the Linux kernel that allows a host machine to run multiple, isolated virtual machines. 
 Born off Linux Containers (LXC)~\cite{bernstein2014containers}, modern containers are an OS-level virtualisation solution for running multiple isolated applications that all share a common underlying Linux kernel. 
 A container consists of one or more processes with reduced privileges and restricted visibility into kernel objects and host resources.
 Thousands of containers can be stored on a physical cloud host in contrast with just very few traditional heavy-weight Virtual Machines. 
 A near-future can be hypothesized where Edge-friendly containerization will allow users to deploy services and applications on heterogeneous Edge nodes with minimal effort. 
 Several works (e.g. \cite{pahl2016container} and \cite{bellavista2017feasibility}) argue the feasibility of container virtualisation applied to cheap low-powered devices, such as the Raspberry Pi~\cite{raspberry}.
 Thanks to the underlying Docker image technology \cite{docker-image}, containers provide resource isolation, self-contained packaging, anywhere-deployment, and ease of orchestration, very fitting features for the Continuum.
-%In actuality, however, many of these characteristics are a merit of the underlying Docker image technology \cite{docker-image} rather than the container virtualisation per se. Images package applications with individual runtime stacks, making the resultant software independent from the host operating system. This self-containment makes it possible to run several instances of an application on different platforms. 
 Several Cloud providers use this technology for their Platform-as-a-Service and Function-as-a-Service solutions.
 
 Modern serverless~\cite{jonas2019cloud} platforms (e.g., Google Cloud Functions~\cite{gcloud-functions}, Azure Functions~\cite{azure-functions}, AWS Lambda~\cite{aws-lambda}) isolate functional units in ephemeral, stateless containers. 
 Using containers, however, incurs latency between hundreds of milliseconds and seconds~\cite{mohanty2018evaluation}, wholly unaffordable for latency-sensitive services that operate at the Edge. 
 To achieve better efficiency, some platforms cache and reuse containers across multiple function calls within given time windows, typically 5~minutes. 
-%Similarly, some users send artificial requests to keep the containers alive. 
 In the Edge, however, long-lived and over-provisioned containers can quickly exhaust local resource capacity, and become impractical for serving multiple IoT devices. 
 Supporting a large number of serverless functions while warranting low response time, within tens of milliseconds~\cite{elbamby2019wireless}, thus is one of the main performance challenges for resource-constrained Edge nodes.
 
 In the way of hard security, containers offer weak isolation. To achieve stronger guarantees, they are often run in per-tenant virtual machines, too heavy for Edge or Fog nodes. 
 A light\-weight yet robust isolation solution thus is a hot research question in the quest for the Continuum.
 Interesting lightweight isolation platforms such as Firecracker and gVisor~\cite{caraza2020blending}, have come to light recently, as a bridge between containers and full system virtualization. 
-%Both Firecracker and gVisor \cite{caraza2020blending} rely on host kernel functionality. 
 Firecracker provides a narrower interface to the host kernel by starting minimal guest VMs and providing full virtualization. gVisor has a wider interface, instead. 
 Both have low memory overhead and decent start-up latency.
-%in any case. For instance, Amazon Firecracker has a memory footprint of 5MB and startup latency of about 125ms \cite{firecracker}.
 
 Unikernels~\cite{madhavapeddy2013unikernels}, which combine a minimal OS and a single application, are another novel virtualization technique of potential interest to the Continuum. Experiments with Unikernel-based serverless functions show 6x better latency and throughput than for mainstream solutions~\cite{koller2017will}. 
 Unfortunately, Unikernel implementations currently lack the maturity needed for production (e.g., assist tooling, decent ecosystem, and aids for non-expert users). This disadvantage makes porting containerized applications very challenging. 
-%Besides, container users can rely on a large ecosystem of tools and support to run unmodified existing applications.
 
-Interestingly,  the basic units of execution in the as-a-service world have continuously shrunk in size and codebase over the last few years: from VMs to containers and serverless functions (which are currently built into vendor-specific container images behind the scenes).
-%Such smaller execution units are dictated by the need for increased flexibility execution environment and strong economic incentives to increase resource utilisation. 
+Interestingly, the basic units of execution in the as-a-service world have continuously shrunk in size and codebase over the last few years: from VMs to containers and serverless functions (which are currently built into vendor-specific container images behind the scenes).
 A direct consequence of that, modern applications are becoming comprised of an increasingly large number of small distributed components.
 
 \paragraph{Dynamic configuration}
@@ -301,24 +200,16 @@ A direct consequence of that, modern applications are becoming comprised of an i
 Edge and IoT nodes must be capable of prompt reaction to context changes in the environment where they operate. 
 Such reactions are critical to applications like video analysis~\cite{jang2018application} that are natural candidates for deployment at the Edge. 
 The risk scenario to be avoided is that IoT devices continue to operate needlessly or erroneously because their controllers running on nearby Edge nodes are late in making opportune adjustments.
-%Meanwhile, the IoT device will continue to perform poorly (or even uselessly) until the controller makes adjustments.
 
 Enabling dynamic configuration on constrained devices would allow swift adaptation to environmental events in accord with application requirements. 
 This goal can be achieved by running an application-specific computation on the node itself, earning a considerable improvement in task accuracy (owing to physical vicinity), network bandwidth, and response time.
 
 Opening Edge devices to arbitrary code execution, though, exposes the system to malicious acts, with compromising breaches that can exploit the slightest code weakness.
-%, of code can lead to system compromise, threatening the controlled physical assets and potentially human safety. 
 Current software isolation stacks can hardly be used in trustworthy embedded systems as they may lack dual-mode protection hardware, storage capacity, or OS components~\cite{peach2020ewasm}. 
-
-%Hardware support is often used to isolate non-embedded applications from each other and the OS from applications \cite{peach2020ewasm}. Dual-mode protection enables the kernel code to be inaccessible from applications at the cost of requiring mode transitions. In addition, Memory Protection Units (MPUs) enable the partitioning of memory into subsets, each accessible by separate applications. 
-%On the other hand, MPUs require OS, hardware, and build-system support. Thus the adoption of hardware memory isolation has been limited in microcontrollers as they typically lack the former two requirements.
 
 A further challenge of dynamic configuration is to strike an acceptable compromise between warranting isolated execution and containing the corresponding loss of efficiency and increase in energy consumption. 
 A common memory-safe execution technique is to adopt interpreted languages that provide type and memory safety. 
-%Thus, memory accesses are constrained only to memory provided by the language runtime, usually via an interpreter, and are prevented from corrupting the device. 
 For instance, the authors of \cite{brzoza2016embedded} have ported interpreters of high-level languages (Lua\footnote{\url{https://replit.com/languages/lua}} and Python) to C to support dynamic reconfiguration of the internal logic in telemetry sensors.
-
-% As an alternative, Software Fault Isolation (SFI \cite{wahbe1993efficient}) techniques provide memory safety instead by constraining loads and stores to a sandbox. When this data sandboxing is paired with control flow integrity (CFI), which ensures that execution can only follow paths intentionally generated by the compiler, the application's execution and memory accesses are constrained to the sandbox. Unfortunately, both the overheads of interpreting in the language runtime and performing the necessary memory checks in SFI are a concern, given the limited resources of microcontrollers.
 
 \paragraph{Interoperability}
 \label{sec:interoperability}
@@ -335,10 +226,6 @@ Having an infrastructure that allows connecting and integrating a diverse set of
 Secondly, an infrastructure where diverse technologies can easily be integrated into will be more future-resistant. 
 This is particularly important for the Edge and IoT, which are still in their infancy, and will certainly see new developments for technologies and protocols. An infrastructure built with technology diversity in mind will allow interoperability with existing and already deployed devices and networks.
 A similar level of heterogeneity occurs for Cloud platforms, which typically expose proprietary interfaces in isolated vertical solutions, which very much hamper cross-platform resource integration~\cite{grozev2014inter}. 
-%This issue can be exacerbated when services in the Continuum can depend on multiple providers to provide the different resources an application may require or to improve application resilience in case of single-provider failure.
-
-%At present, Cloud, IoT services, and applications are typically conceived as isolated vertical solutions. All system components are tightly coupled to the specific application or infrastructure context. 
-%The interoperability challenge involves several aspects, where solutions need to be investigated in terms of uniformly access to cloud services \cite{grozev2014inter}, programming interfaces, and means for coping with data diversity.
 
 \paragraph{Portability and Programmability}
 
@@ -347,21 +234,15 @@ Leaving resource management to the Cloud Provider, within the bounds of a grante
 Using containerization, the user is free to elect the programming language of choice, with the sole concern to ensure that the corresponding executable image, which embeds all the necessary package libraries and configurations, can be deployed on the target platform, which typically is x86\_64 GNU Linux. 
 Such images can be constructed from minimal file system layers, sharing read-only parts of them, notably the base OS, with other containers, thus shedding considerable footprint. 
 
-%As mentioned before in Section §\ref{sec:virtualisation}, cloud developers typically use containers spawned from images that include everything needed to run them. This package includes code, libraries, settings, and system tools. More importantly, these images can be constructed from minimal filesystem layers, and read-only layers can be shared, notably the base OS layer. Images hence are lightweight and use considerably less space than VMs. They offer benefits to developers in terms of ease of deployment, testing, and composition. Notably, they can be used to capture a development environment known to work for each application revision and share this environment among a team of developers. Organisations are widely using containers to deploy their increasingly diverse workloads to the cloud datacentres.
-
 Conversely, in the Edge and, by extension, in the Continuum, the compute nodes are vastly diverse for CPU (e.g., x86\_64, ARM32, ARM64, and RISC-V) and runtime, which makes it much harder for programmers to make application development and deployment decently portable. 
-%The nodes' runtime differs from each other, and the programmers face considerable difficulties in writing a service that may be deployed in the Continuum paradigm.
 
 Docker images attempt to overcome this challenge by defining multiple variants (usually referred to as tags) of the same image, to target multiple architectures, for processor or OS. 
-%A single image may contain variants for different architectures or even for different operating systems, such as Windows. 
-%Most of the official images on Docker Hub \cite{docker-hub} already provide multiple variants for amd64, arm32v5, arm32v6, arm32v7, arm64v8, i386, ppc64le, and s390x. 
 This nice feature, however, does not alleviate the pain of configuring and building each application image for each target platform. Moreover, the lack of general-purpose OSs embeddable on Edge devices or their limitation in resource capacity prevent from using conventional containers on them. further impairing portability across the Continuum.
 
 Portability also relates to programmability, in that the choice of programming language may favor or hinder portability. 
 To facilitate data processing at the edge of the network, the authors of~\cite{shi2016edge} propose computing stream defined as a serialization of functions applied along the data propagation path. Likewise, the work in~\cite{beckman2020harnessing} proposes a simple Function-as-a-Service abstraction that allows pushing new algorithms and Deep Learning models to the desired network location, that is, Edge, Fog, Cloud, HPC farm.
 
-The Serverless paradigm fits this bill well on two grounds~\cite{yi2017lavea}. First, the serverless programming model makes  developing, deploying, and managing applications dramatically less burdensome than in conventional styles. 
-%There is no need to understand the complex underlying procedures and distributed systems to run the applications. 
+The Serverless paradigm fits this bill well on two grounds~\cite{yi2017lavea}. First, the serverless programming model makes  developing, deploying, and managing applications dramatically less burdensome than in conventional styles.
 Second, individual functions may flexibly and equally run on the Edge or the Cloud alike, thus earning much in the way of portability.
 
 However, while well suited for event-driven and request-reply applications, the serverless computing model falls short for long-running services that must feature high availability and low latency, as needed for Edge-based user interaction or industrial control loops.
@@ -376,26 +257,12 @@ It therefore follows that all synchronization, data \& state migration, handshak
 When mobility is involved, provisioning data and services ought to be highly reactive and highly reliable, which is a challenge. 
 For example, present-day vehicular networking and communication reportedly appear to be intermittent or unreliable~\cite{he2014developing}.
 
-% Being co-located at base stations, MEC servers are available anywhere the user moves and can support roaming between cellular cells.
-
-% \subsection{Reliability}
-
-% When applications are deployed in resource-constrained environments, many challenges related to device failure or unreachability exist. Things at the edge of the network could fail due to various reasons, and they could additionally report failure to report data under unreliable conditions such as low battery level.
-
-% As mentioned before, various new communication protocols for IoT data collection have been proposed in the last years (e.g. CoAP, MQTT, AMPQ) \cite{naik2017choice}. These protocols serve well for the support of low energy and highly dynamic network condition. However, their connection reliability is not as good as conventional BlueTooth or WiFi. For instance, if both sensing data and communication are unreliable, the system must leverage multiple reference data sources and historical data records to provide a reliable service.
-
 \paragraph{Security and Privacy}
 
-The seamless integration of Edge, Fog, and Cloud computing is bound to raise unforeseen security issues. Previously unexplored scenarios, such as the interplay of heterogeneous Edge nodes and the migration of services across global and local scales, create the potential for original channels of malicious behavior~\cite{yu2017survey}.
+The seamless integration of Edge, Fog, and Cloud computing is bound to raise unforeseen security issues. Previously unexplored scenarios, such as the interplay of heterogeneous Edge nodes and the migration of services across global and local scales, create the potential for original channels of malicious behaviour~\cite{yu2017survey}.
 
 In point of principle, end-user data originated at the Edge should be stored locally, with the user able to control whether and which service providers be allowed to access them. 
 As long as Edge nodes expose vulnerabilities (e.g. tampering, spoofing, falsifying), however, storing and processing privacy-sensitive data there should be regarded as far more hazardous than retreating them at the center of the Cloud.
-
-%Moreover, for applications like smart grids or sensor networks, an adversary could report false data, modify the other user data, tamper with their smart meter, or spoofing IP addresses, further disrupting sensor management's effectiveness in IoT systems.
-
-% \subsection{Energy efficiency}
-
-% Obtaining energy efficiency in both data processing and transmission is an essential open issue. Several directions have been proposed for handling such issues: more efficient data transmission and compression technologies, data caching mechanisms for reusing collected data in time-tolerant applications, middlewares to improve availability and compress data in case of continuous and long-duration monitoring of data.
 
 \section{System design}
 \label{sec:technicals}
@@ -422,12 +289,11 @@ The system as we envisage it, dynamically instantiates and schedules services al
 In the event that a single cluster zone lacks hardware, software or data resources to meet the user needs, it would propagate the corresponding requests outside of its federation to cluster zones within an acceptable geographical distance that have the required capabilities.
 
 Collaboration among cluster zones is essential to support user mobility across neighboring regions. 
-In the Continuum, services should follow the user movements without significant outage or perturbation. %Synchronisation and state migration are two important mobility issues addressed at the federation layer.
+In the Continuum, services should follow the user movements without significant outage or perturbation.
 
 User applications running on a single cluster node access resources thanks to the intermediation of the \textit{service layer}. Applications intending to run on a cluster zone specify their service requirements and constraints, namely the type of resource (e.g., expected performance, pricing), without detailed knowledge of the underlying infrastructure. 
 The \textit{orchestrator} receives the requirements from the \textit{service layer} intermediary, and provisions resources and services as required, assigning them to \textit{compute nodes} in the target cluster zone.
-While geographically distant, 
-such nodes form an interconnected cluster that logically aggregates the available resources.
+While geographically distant, such nodes form an interconnected cluster that logically aggregates the available resources.
 
 Applications are described as manifests, which itemize the relevant resources and service requirements.
 Resources concern for example the amount of CPU and memory. 
