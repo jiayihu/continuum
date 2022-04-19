@@ -664,8 +664,8 @@ Notably, several independent Cloud providers have remarkably similar ideas about
 The Continuum is still a very novel idea and its realisation demands cutting-edge solutions from the just mentioned areas of software development. 
 Problems like IoT orchestration, service composition and multi-platform virtualisation are prominent hot challenges. Naturally, each of them has attracted interest in the last few years and nascent solutions have emerged, but we have not observed any governance over the evolution of these areas as the Continuum will need it.
 
-The two ambits of technology that we deem most worthy of future effort are (1) ways to extend current orchestrator capabilities beyond Cloud boundaries and (2) bringing the WebAssembly virtualisation to a mature level for usage both in the high-powered Cloud machines and in constrained Edge devices. 
-As things stand today, our empirical results show that WebAssembly is nearly exclusively suited for pure compute functions. 
+The two ambits of technology that we deem most worthy of future effort are (1) ways to extend current orchestrator capabilities beyond Cloud boundaries and (2) bringing the WebAssembly virtualisation to a mature level for usage in both high-powered Cloud nodes and resource-constrained Edge devices. 
+Our empirical results show that present WebAssembly is nearly exclusively suited for pure compute functions, which is too little for the Continuum.
 The lack of multi-threading and a mature network interface severely limit the space of real-world applications that wasm can serve.
 Likewise, the results we obtained from execution benchmarks run on microcontrollers discourage the idea of using Wasm interpreters on resource-constrained nodes as it would be necessary to incorporate the Edge in the Continuum for real. 
-On the bright side, we reckon that these problems should be surmountable given sufficient attention, time and effort by the developers' community. On this account, we anticipate IoT/service orchestration and WebAssembly to receive significant attention in the coming years.
+On the bright side, however, we trust these problems should be overcome given sufficient time and effort by the developers' community. On this account, we anticipate IoT/service orchestration and WebAssembly to receive significant attention in the coming years.
