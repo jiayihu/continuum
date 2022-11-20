@@ -21,7 +21,7 @@ As such "things" comprise a multitude of heterogeneous devices ranging from cons
 
 In this arrangement, a more decentralised solution is required. The Continuum is a collective infrastructure where data processing may take place \textit{dynamically} where it is deemed most convenient under any of the criteria of interest (latency, privacy, energy, etc.). The concept enables the traditional Internet and the Internet of Things to integrate into a seamless Continuum, where a multitude of as-a-service applications may be developed, deployed, and employed regardless of location \cite{beckman2020harnessing}. The Cloud and the Edge can both benefit from forming the Continuum together, allowing Cloud-alike virtualized access to the physical world to occur in a more distributed and dynamic manner, and favouring the creation of numerous novel latency-free, private and secure, energy-savvy services.
 
-This vision of seamless integration extends the view in literature which regards the Cloud and the IoT as distinct spaces, with the latter sending data and offloading computation to the former but not vice versa \textcolor{red}{aggiungere riferimenti}. The Continuum concept goes beyond merely connecting network nodes to allow computation to happen at \textit{predetermined} locations in the computing space.
+This vision of seamless integration extends the view in literature which regards the Cloud and the IoT as distinct spaces, with the latter sending data and offloading computation to the former but not vice versa \textcolor{red}{aggiungere riferimenti recenti}. The Continuum concept goes beyond merely connecting network nodes to allow computation to happen at \textit{predetermined} locations in the computing space.
 
 Such vision can bring novelty to a variety of application areas, from managing extreme events (e.g. environmental monitoring \cite{brzoza2016embedded}) to optimising everyday processes (e.g. manufacturing \cite{chen2018edge}) and improving life quality (e.g. healthcare \cite{pace2018edge} and smart cities \cite{he2017multitier}).
 Figure~\ref{fig:continuum} attempts to capture said vision pictorially. 
@@ -45,15 +45,17 @@ The foundation of the Continuum is made up of pervasive service platforms locate
 %This vision In a similar vein, the authors of \cite{abdelbaky2017computing} present the notion of computing in the Continuum as "a fluid ecosystem where distributed resources and services are programmatically aggregated on-demand to support emerging data-driven application workflows". 
 %Likewise, the authors of \cite{beckman2020harnessing} define the Continuum of Computing and seek to develop approaches that include it into a collective whole.
 
-\paragraph{Contribution}
+\paragraph{\textcolor{orange}{Contribution}}
 
-The concept of Continuum is not completely novel, as some authors have already described a similar vision \cite{latre2014fluid, beckman2020harnessing}. No matter how attractive this vision may be, however, only a few authors have carried out to date, to the best of our knowledge, efforts to explore the implementation of technologies for integrating the Cloud and Edge device into a seamless system, \cite{abdelbaky2017computing}. Our work aims to fill such gap.
+The concept of Continuum is not completely novel, as some authors have already described a similar vision during the last decade \cite{latre2014fluid, beckman2020harnessing}. No matter how attractive this vision may be, however, only a few authors have carried out to date, to the best of our knowledge, efforts to explore the implementation of technologies for integrating the Cloud and Edge device into a seamless system, \cite{abdelbaky2017computing}. Our work aims to provide a foundation to fill such gap.
 
-Our research comprises a proposition of a reference architecture for the research community in Section \ref{sec:technicals}, an in-depth analysis of the Continuum's problem space in Section \ref{sec:challenges} and a a Proof of Concept (PoC) implementation that assesses various state-of-the-art technologies (Section \ref{sec:technology-selection}). We adapted both existing tools developed for the Cloud and novel technologies lately experimented by prominent Cloud vendors, in order to gauge the distance between the industry and the Continuum vision. To the best of our knowledge, such adaptation and integration of tools has only been assumed to be possible by the research community \cite{wasm-continuum} and wrongly straightforward in our opinion.
+Our research comprises a proposition of a reference architecture for the research community (Section \ref{sec:technicals}), an in-depth analysis of the Continuum's problem space (Section \ref{sec:challenges}) and a a Proof of Concept (PoC) implementation that adapts and integrates various state-of-the-art technologies (Section \ref{sec:technology-selection}). We adapted both well-known tools developed for the Cloud and technologies still at an early stage of development, in order to gauge the distance between the industry and the Continuum vision. The result of our work and the utilised tools are all open-sourced and available for any future work that aims to move forward the implementation of a Continuum system.
 
-We developed a PoC implementation of the Continuum infrastructure, combining mature Cloud tools like the Kubernetes \cite{kubernetes} orchestrator with innovative open-source solutions, in order to address many of the challenges that arise when attempting to integrate the Cloud into a seamless Continuum with the Edge. Notably, we explored the discoverability of Edge nodes in a Kubernetes cluster, the ubiquitous interoperability of web services, and thoroughly experimented with the nascent sandboxing standard WebAssembly \cite{haas2017bringing} to bring container-like virtualisation and portability on comparatively powerful machines and constrained devices.
+To the best of our knowledge, such adaptation and integration of open-source tools has only been assumed to be possible by the research community \cite{wasm-continuum} and wrongly deemed as straightforward in our opinion.
 
-In our findings, we noticed that many of today's technologies fit rather well, in principle, in our vision of the Continuum. We take this as a sign of convergence in the organic trends of evolution of areas like Cloud, Edge and Web. There is still, however, a substantial gap in terms of viability. On the one hand, existing production-grade tools like Kubernetes \cite{kubernetes} are still figuring out how to align their Cloud-based interface to modern use cases like Edge computing. On the other hand, nascent solutions like WebAssembly \cite{haas2017bringing} are still in a state of infancy and cannot provide the requested maturity to elevate them to production use. More in-depth conclusions are outlined in Section \ref{sec:conclusion}.
+We first explored the feasibility of adapting mature Cloud tools like the Kubernetes \cite{kubernetes} orchestrator to span over the whole Cloud-Edge continuum. Notably, we explored the discoverability of Edge nodes in a Kubernetes cluster and the ubiquitous interoperability of web services. We also thoroughly experimented with the integration of the nascent sandboxing standard WebAssembly \cite{haas2017bringing} to bring container-like virtualisation and portability on both comparatively powerful machines and constrained devices. 
+
+In our findings, we noticed that many of today's technologies fit rather well, in principle, in our vision of the Continuum. We take this as a sign of convergence in the organic trends of evolution of areas like Cloud, Edge and Web. There is still, however, a substantial gap in terms of viability. On the one hand, existing production-grade tools like Kubernetes \cite{kubernetes} are still figuring out how to align their Cloud-centric interface to modern use cases like Edge computing. On the other hand, nascent solutions like WebAssembly \cite{haas2017bringing} are very promising on paper in terms of designs and features but still in a state of infancy in terms of practicality. More in-depth conclusions are outlined in Section \ref{sec:conclusion}.
 
 % Good illustrations of such points are the pooor performance of interpreted WebAssembly in constrained devices and the lack of a standard networking WebAssembly interface, which hinder the practicality of any high-level service other than pure computation machine learning.
 
@@ -151,7 +153,7 @@ The orchestrator control plane is the core of the orchestration system. It has a
 
 Each machine in the cluster that is available for services and applications is a compute node. Each of these nodes implements the orchestrator agent runtime with various responsibilities. First, it collects local information such as resource consumption metrics periodically reported to the control plane. Second, it starts and stops service instances and manages local resources via a virtualisation runtime. Finally, it monitors the instances deployed on the node, sending periodic status reports to the control plane.
 
-\textcolor{red}{Aggiungere requisito di interoperability tra compute nodes}
+A critical requirement of the virtualization runtime on the Compute nodes is offering a \textit{consistent} execution platform independent of any underlying infrastructure to allow applications to run across all software and hardware types with the same behaviour. This aspect is fundamental due to the extreme heterogeneity of the devices in the Continuum.
 
 \subsubsection{IoT nodes}
 
@@ -190,18 +192,37 @@ To meet the requirements of the cited types of services, we implemented a Proof 
     \item Service nodes: they implement the needed services and allow them to be reused across different clusters. Internally each service can be composed of stand-alone services. We show the example of levee monitoring, which needs a streaming service to aggregate the data from the broker nodes, a local database to store the information for the analysis, and a flood prediction service to analyse the information and provide insight. 
 \end{itemize}
 
-The service nodes are deployed at multiple Edge clusters, corresponding to different stations, and at a Cloud cluster. The rationale for expanding the services to the Cloud is two-fold.
+The service nodes are deployed at multiple Edge clusters, corresponding to different stations, and at a Cloud cluster.
 
-First, the Edge clusters are heterogeneous in computing capacity, and some zones may have not enough computing power to handle streams. Leveraging the Cloud can help increase the workload at the cost of more bandwidth usage and latency. Such compromise might be acceptable, especially in the case of intensive data analysis on the sensor data.
+% The rationale for expanding the services to the Cloud is two-fold. First, the Edge clusters are heterogeneous in computing capacity, and some zones may have not enough computing power to handle streams. Leveraging the Cloud can help increase the workload at the cost of more bandwidth usage and latency. Such compromise might be acceptable, especially in the case of intensive data analysis on the sensor data.
 
-Second, the prediction model could benefit from more knowledge derived from multiple streams geographically distributed. Likewise, a flood risk assessment model running in the Cloud could achieve a globally optimal solution, whereas Edge services can output only locally optimal results. On the other hand, the communication channels may become unavailable during flood threat scenarios, so the system must perform a localised assessment. Unfortunately, the loss of communication is unpredictable, but the system must quickly adapt to that eventuality. All these examples of computing dynamism advocate that the Continuum shines compared to relatively static Cloud-only, Edge-only, or pre-defined Cloud+Edge architectures.
+The prediction model benefits from more knowledge derived from multiple streams geographically distributed. A flood risk assessment model running in the Cloud can achieve a globally optimal solution, whereas Edge services can output only locally optimal results. On the other hand, the communication channels may become unavailable during flood threat scenarios, so the system must perform a localised assessment. Unfortunately, the loss of communication is unpredictable, but the system must quickly adapt to that eventuality. All these examples of computing dynamism advocate that the Continuum shines compared to relatively static Cloud-only, Edge-only, or pre-defined Cloud+Edge architectures.
 
 \section{The challenges ahead}
 \label{sec:challenges}
 
-Several challenges lay ahead in the realisation of the Continuum infrastructure. Besides featuring extreme heterogeneity, current Edge technology most notably lacks support for service orientation, interoperability, orchestration, reliability, efficiency, availability, and security. We now briefly discuss each problem in isolation and for each we later propose a candidate technology.
+Several challenges lay ahead in the realisation of the Continuum infrastructure. Besides featuring extreme heterogeneity, current Edge technology most notably lacks support for service orientation, interoperability, orchestration, reliability, efficiency, availability, and security. We now briefly discuss each problem in isolation and for each we later propose a candidate technology. Figure~\ref{fig:challenges-technologies} presents a preliminary overview.
 
-\paragraph{Context-sensitive service orientation}
+\begin{table}
+  \caption{Preliminary overview of the challenges and candidate technologies. WebAssembly is evidently a key enabling technologies in our opinion.}  \label{fig:challenges-technologies}
+  \begin{tabular*}{\textwidth}{ | l | l }
+   \toprule
+    \textbf{Challenge} & \textbf{Technology} \\
+   \midrule
+    Service orientation & RESTful web services \\
+    & Open Service Broker \\
+    & CoAP \\
+    \midrule
+    Orchestration & Kubernetes, Akri \\
+    Virtualisation & WebAssembly \\
+    Dynamic configuration & WebAssembly \\
+    Interoperability & WebAssembly \\
+    Portability and Programmability & WebAssembly, Rust \\
+   \bottomrule
+  \end{tabular*}
+\end{table}
+
+\paragraph{Service orientation}\label{p:service-orientation}
 We argue that service orientation is fundamental to organise and utilise distributed capabilities that may lie under the control of different ownership domains. 
 % A Service-Oriented Architecture (SOA) provides "a uniform mean to offer, discover, interact with and use capabilities to produce desired effects consistent with measurable preconditions and expectations" \cite{mackenzie2006reference}.
 
@@ -224,7 +245,7 @@ The current service interfaces in fact are ostensibly designed with human intera
 Finally, services fit for the Continuum, hence deployable at the Edge, are sensitive to the context of the environment in which they operate.
 The context-awareness we envision is necessary to implement local control loops and trigger specific actions on local events (e.g. sensor readings in our PoC).
 
-\paragraph{Orchestration}
+\paragraph{Orchestration}\label{p:orchestration}
 The transition to the Continuum will require coordinating and scheduling the operation of multiple distributed service components. The complexity of that endeavour makes orchestration essential, over and above the rating it enjoys from DevOps adopters~ \textcolor{red}{\cite{nygren2010akamai}}. 
 
 Orchestrating in the Continuum is especially challenging owing to the scale, heterogeneity and diversity of resource types, and the uncertainties of the underlying environments for resource capacity (e.g. bandwidth and memory), network failures, user access pattern (e.g., for quantity and location), and service life cycle.
@@ -234,7 +255,7 @@ Orchestrating services in the Continuum is a remarkable challenge, which encompa
 
 \textcolor{red}{TODO: leggere Orchestration in fog computing: a comprehensive survey}
 
-\paragraph{Virtualisation}
+\paragraph{Virtualisation}\label{p:virtualisation}
 \label{sec:virtualisation}
 
 The rapid pace of innovation in data centres and application platforms has transformed how organisations build, deploy, and manage services.
@@ -256,7 +277,7 @@ Supporting a large number of serverless functions while warranting low response 
 In the way of hard security, containers also offer weak isolation. To achieve stronger guarantees, they are often run in per-tenant VMs, too heavy for Edge or Fog nodes like the Raspberry Pi. 
 A light\-weight yet robust isolation solution thus is another hot research question in the quest for the Continuum.
 
-\paragraph{Dynamic configuration}
+\paragraph{Dynamic configuration}\label{p:dynamic-configuration}
 
 Edge and IoT nodes must be capable of prompt reaction to context changes in the environment where they operate. 
 Such reactions are critical to applications like video analysis~\cite{jang2018application} that are natural candidates for deployment at the Edge. 
@@ -272,8 +293,7 @@ A further challenge of dynamic configuration is striking an acceptable compromis
 A common memory-safe execution technique is to adopt interpreted languages that provide type and memory safety. 
 For instance, the authors of \cite{brzoza2016embedded} have ported interpreters of high-level languages (Lua and Python) to C to support dynamic reconfiguration of the internal logic in telemetry sensors.
 
-\paragraph{Interoperability}
-\label{sec:interoperability}
+\paragraph{Interoperability}\label{p:interoperability}
 
 Many technologies are available for connecting and integrating all kinds of "things" into the Continuum. 
 ZigBee, IPv6 over Low-Power Wireless Area Networks (6LoWPAN), MQTT, and CoAP~\cite{naik2017choice}. are popular in the wireless sensor networking area, while OPC \cite{gruner2016restful} has a good take-up in factory automation. 
@@ -287,7 +307,7 @@ Secondly, an infrastructure where diverse technologies can easily be integrated 
 Such flexibility is crucial for the Edge and IoT, which will undoubtedly see new developments for technologies and protocols. An infrastructure built with technology diversity in mind will allow interoperability with existing and already deployed devices and networks.
 %\textcolor{red}{A similar level of heterogeneity occurs for Cloud platforms, which typically expose proprietary interfaces in isolated vertical solutions, which very much hamper cross-platform resource integration~\cite{grozev2014inter}. }
 
-\paragraph{Portability and Programmability}
+\paragraph{Portability and Programmability}\label{p:portability-and-programmability}
 In Cloud-native models of computing, users of containerisation are free to select the programming language of choice, with the sole concern to ensure that the corresponding executable image, which embeds all the necessary package libraries and configurations, can be deployed on the target platform. 
 Such images can be constructed from minimal file system layers, sharing read-only parts (e.g. base OS) with other containers, thus shedding a considerable footprint. 
 
@@ -302,8 +322,6 @@ The Serverless paradigm fits this bill well on two grounds~\cite{yi2017lavea}. F
 Second, individual functions may flexibly and equally run on the Edge or the Cloud alike, thus earning much in the way of portability.
 
 However, while well suited for event-driven and request-reply applications, the serverless computing model falls short for long-running services that must feature high availability and low latency, as needed for Edge-based user interaction or industrial control loops.
-
-\textcolor{red}{TODO: Cloudflare WASM Workers}
 
 \section{Technology selection}
 
@@ -394,38 +412,36 @@ More importantly, labels can be used also to force the scheduler to colocate ser
 One more reason for our picking Kubernetes over Docker Swarm \cite{docker-swarm} was lack of multitenancy in the latter. 
 Docker Swarm is a popular open-source orchestrator often cited for Edge orchestration (e.g. \cite{bellavista2017feasibility}, and \cite{ismail2015evaluation}) due to its simplicity. However, support for multitenancy is a must for our service platform.
 
-% \paragraph{Akri}\label{p:akri}
+\paragraph{Akri}\label{p:akri}
 
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[width=\columnwidth]{figures/akri}
-% \caption{The Akri architecture.}
-% \label{fig:akri}
-% \end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\columnwidth]{figures/akri}
+\caption{The Akri architecture can be divided into four main components: the agents, the controller, the brokers and the configuration. A configuration extends the Kubernetes API with new communication protocols and the related metadata, such as the protocol discovery parameters or the Docker image for the agent container. The Akri agent is a Pod responsible for discovering devices according to a communication protocol. It keeps track the device's state and keep the Akri controller updated with the status.}
+\label{fig:akri}
+\end{figure}
 
-% To register the IoT devices on the Kubernetes cluster, we adopted Akri \cite{akri}, a Microsoft open-source project which allows visibility to IoT devices from applications running within the Kubernetes cluster. Akri stretches Kubernetes' already experimental APIs to implement the discovery of IoT devices, with support for the diversity of communication protocols and ephemeral availability.
+To register the IoT devices on the Kubernetes cluster, we adopted Akri \cite{akri}, a Microsoft open-source project which allows visibility to IoT devices from applications running within the Kubernetes cluster. Akri stretches Kubernetes' already experimental APIs to implement the discovery of IoT devices, with support for the diversity of communication protocols and ephemeral availability.
 
-% Akri's architecture, depicted in Figure~\ref{fig:akri}, can be divided into four main components: the agents, the controller, the brokers and the configuration. A configuration is a Kubernetes Custom Resource Definition (CRD) that extends the Kubernetes API with new types of resources. Specifically, a configuration defines a communication protocol and the related metadata, such as the protocol discovery parameters or the Docker image for the agent container.
+% At the time of writing, the project has built-in support for ONVIF \cite{onvif}, udev \cite{udev} and OCP UA \cite{gruner2016restful} discovery handlers, with an incoming proposal for CoAP \cite{bormann2012coap} by us.
 
-% The Akri agent is a Pod responsible for discovering devices according to a communication protocol. It can be easily developed and deployed to the cluster to support new protocols in the system. The agent will track the device's state and keep the Akri controller updated with the status. At the time of writing, the project has built-in support for ONVIF \cite{onvif}, udev \cite{udev} and OCP UA \cite{gruner2016restful} discovery handlers, with an incoming proposal for CoAP \cite{bormann2012coap} by us.
+Using Akri, the Kubernetes cluster can carry out dynamic discovery to use new resources as they become available and move away from decommissioned/failed resources. Discovering IoT devices is usually accomplished by scanning all connected communication interfaces and enlisting all locally available resources.
 
-% Using Akri, the Kubernetes cluster can carry out dynamic discovery to use new resources as they become available and move away from decommissioned/failed resources. Discovering IoT devices is usually accomplished by scanning all connected communication interfaces and enlisting all locally available resources.
+Akri is also responsible for enabling applications to communicate with the device and deploying a broker Pod as intermediary. We devised the broker as a web server that abstracts the actual communication between devices and applications behind the RESTful API described Previously.
 
-% Akri is also responsible for enabling applications to communicate with the device and deploying a broker Pod as intermediary. The broker is any application instructed to communicate with the device. We devised the broker as a web server that abstracts the actual communication between devices and applications behind the RESTful API described Previously.
+% Akri should automatically find all the devices in the environment and make them available as web resources. For instance, the agent regularly discovers the devices by scanning for CoAP resources.
 
-% % Akri should automatically find all the devices in the environment and make them available as web resources. For instance, the agent regularly discovers the devices by scanning for CoAP resources.
+The broker may also offer local aggregates of device-level services, such as the combined temperature measurements of all the Things connected to it for later consumption in our flood prediction, electrical load forecasting services or precision agriculture services.
 
-% The broker may also offer local aggregates of device-level services, such as the combined temperature measurements of all the Things connected to it for later consumption in our flood prediction, electrical load forecasting services or precision agriculture services.
+Our RESTful broker also helps to scale the number of concurrent HTTP requests by implementing highly performant cache mechanisms. The IoT resource periodically sends its sensor readings to the broker, where the values are cached locally. Each application request is then served directly from this cache without accessing the actual device, with benefits on the average roundtrip time.
 
-% Our RESTful broker also helps to scale the number of concurrent HTTP requests by implementing highly performant cache mechanisms. The IoT resource periodically sends its sensor readings to the broker, where the values are cached locally. Each application request is then served directly from this cache without accessing the actual device, with benefits on the average roundtrip time.
+% The broker architecture has the advantage of fully decoupling the leaf node from the cluster workload. It only needs to send an update packet with a frequency short enough to ensure data validity. On the other hand, the retrieved data's staleness will depend on the device's frequency of updates. Forwarding the HTTP request (adequately translated) has the advantage of always returning the most recent sensor reading when the request is processed. The cache mechanism cannot be applied for non-cacheable requests (e.g. HTTP POST) that must be sent to devices, such as turning on LEDs or changing the application state.
 
-% % The broker architecture has the advantage of fully decoupling the leaf node from the cluster workload. It only needs to send an update packet with a frequency short enough to ensure data validity. On the other hand, the retrieved data's staleness will depend on the device's frequency of updates. Forwarding the HTTP request (adequately translated) has the advantage of always returning the most recent sensor reading when the request is processed. The cache mechanism cannot be applied for non-cacheable requests (e.g. HTTP POST) that must be sent to devices, such as turning on LEDs or changing the application state.
+As many distributed monitoring applications are usually read-only during their operation (e.g. sensors collecting data in our case), this architecture exhibits great scalability. A potential goal is to enable new types of services where physical sensors can be shared with thousands of users with little impact on latency and data staleness. However, at the time of writing, this is still a very distant achievement.
 
-% As many distributed monitoring applications are usually read-only during their operation (e.g. sensors collecting data in our case), this architecture exhibits great scalability. A potential goal is to enable new types of services where physical sensors can be shared with thousands of users with little impact on latency and data staleness. However, at the time of writing, this is still a very distant achievement.
+The Kubernetes Device Plugin API heavily influences the current Akri architecture. Such interface, already considered experimental by the Kubernetes community, was designed for hardware attached to compute nodes, e.g. GPUs. However, IoT devices can live independently from the nodes, and most of them do. Akri expects a 1:1 relationship between compute node and device, whereas most IoT devices do not have any kind of relationship to any node per se. This mismatch has several undesired consequences, including, principally, scalability and resiliency.
 
-% The Kubernetes Device Plugin API heavily influences the current Akri architecture. Such interface, already considered experimental by the Kubernetes community, was designed for hardware attached to compute nodes, e.g. GPUs. However, IoT devices can live independently from the nodes, and most of them do. Akri expects a 1:1 relationship between compute node and device, whereas most IoT devices do not have any kind of relationship to any node per se. This mismatch has several undesired consequences, including, principally, scalability and resiliency.
-
-% Another pain point in Akri's current state is that the project is still concentrating its efforts on allowing users to expose IoT nodes as services inside the Kubernetes cluster and on supporting a wide variety of IoT protocols. Regrettably, however, the project lacks more advanced yet very needed features for implementing software caching or assuring high availability or autoscaling in IoT scenarios. Such features are admittedly harder to provide but highly needed to bring the Cloud to the Edge and vice versa, an essential preliminary step to the Continuum.
+Another pain point in Akri's current state is that the project is still concentrating its efforts on allowing users to expose IoT nodes as services inside the Kubernetes cluster and on supporting a wide variety of IoT protocols. Regrettably, however, the project lacks more advanced yet very needed features for implementing software caching or assuring high availability or autoscaling in IoT scenarios. Such features are admittedly harder to provide but highly needed to bring the Cloud to the Edge and vice versa, an essential preliminary step to the Continuum.
 
 \subsection{Virtualisation, Interoperability and Portability}\label{sec:virtualization}
 
@@ -454,7 +470,7 @@ WebAssembly (Wasm) \cite{haas2017bringing}, first announced in 2015 and released
 
 We picked WebAssembly as the technology enabling virtualisation, interoperability and portability in the Continuum for two fundamental reasons. 
 First, WebAssembly provides language, hardware, and platform independency by offering a \textit{consistent} execution platform independent of any underlying infrastructure to allow applications to run across all software and hardware types with the same behaviour. The import of such a feature for the Continuum cannot be emphasised enough.
-Second, WebAssembly is advertised as safe \textit{and} fast to execute. A program code cannot corrupt their execution environment, jump to arbitrary locations, or perform other undefined behaviour (which memory-safe languages such as Rust, cf. §\ref{p:Rust}, contribute to preventing).  Thanks to that execution guarantee, a WebAssembly may suffer only data exploits, which are mitigated by applying memory and state encapsulation at the module level rather than the application level.
+Second, WebAssembly is advertised as safe \textit{and} fast to execute. A program code cannot corrupt their execution environment, jump to arbitrary locations, or perform other undefined behaviour (which memory-safe languages such as Rust, \textcolor{red}{riferimento}, contribute to preventing).  Thanks to that execution guarantee, a WebAssembly may suffer only data exploits, which are mitigated by applying memory and state encapsulation at the module level rather than the application level.
 % In that manner, a module's memory and functions cannot leak information unless explicitly exported/returned. 
 % This granularity in sandboxing is extremely important as security incidents have increasingly exploited vulnerabilities in the dependency chain. Reuse of third-party software is pervasive in modern languages like JavaScript, Rust or Go. 
 Granular memory encapsulation means that even untrusted modules can be safely executed in the same address space as other code, a critical point for dynamic configuration in constrained devices and multitenancy in the compute nodes of our architecture. Performance wise, benchmarks of Wasm runtimes on modern browsers have shown a slowdown of approximately 10\% compared to native execution, typically within 2x \cite{haas2017bringing, wasm-continuum}.
@@ -545,7 +561,8 @@ The results undeniably favour the Wasm binary format as the C dynamic lib is oft
 Figure~\ref{fig:b-wasmi-4} plots the slowdown of the Wasm interpreter executing Polybench benchmarks on the STM32F407 microcontroller against native Rust. 
 Each Polybench benchmark has been run 15 times, following the methodology described in \cite{wasm3-performance}. The results show a dramatic slowdown, with a factor of 100-400X. Such results dispel the notion of using Wasm interpreters on microcontrollers to support dynamic reconfiguration.
 However, it is fair to say that the Wasm interpreter we used, wasmi \cite{wasmi}, was adapted to work on embedded devices and was not designed for highly constrained devices. 
-Wasmi is developed for blockchain execution; as such it is used to offer a deterministic sandboxed execution context running on Cloud servers. Accordingly, embedded execution performance is not paramount to it, unfortunately. Alternative interpreters, implemented in the C language, shows a much inferior  execution penalty, in the order of 30-60x slower than native \cite{peach2020ewasm}. Thus, it is reasonable to believe that future efforts may allow reaching decent performance for Rust-built Wasm interpreters. Arguably, however, a 30x execution penalty can still seriously deter the usage of interpreters in microcontrollers.
+% Wasmi is developed for blockchain execution; as such it is used to offer a deterministic sandboxed execution context running on Cloud servers. Accordingly, embedded execution performance is not paramount to it, unfortunately.
+Alternative embeddable interpreters, implemented in the C language, shows a much inferior  execution penalty, in the order of 30-60x slower than native \cite{peach2020ewasm}. Arguably, however, a 30x execution penalty can still seriously deter the usage of interpreters in microcontrollers.
 
 % \begin{figure}[ht]
 % \centering
@@ -563,22 +580,24 @@ Finally, running Wasm on resource-constrained microcontrollers also presents a m
 
 \subsection{Wasm on the Cloud}
 
-Wasm Pods run on Krustlet \cite{krustlet}, while container Pods are scheduled on K3s \cite{k3s} Kubelet. Krustlet (a Kubernetes-Rust-Kubelet stack) is an experimental implementation of the Kubernetes compute node (Kubelet) API that supports Wasm as virtualisation technology. Therefore, it listens to the Kubernetes API event stream for new units of execution (Pods) and runs them under a WebAssembly System Interface (WASI) runtime (notably, Mozilla's Wasmtime \cite{wasmtime}).
+We successfully integrated WebAssembly into Kubernetes with Wasm Pods running on Krustlet \cite{krustlet}, while the container Pods are scheduled on K3s \cite{k3s} Kubelet. Krustlet (a Kubernetes-Rust-Kubelet stack) is an experimental implementation of the Kubernetes compute node (Kubelet) API that supports Wasm as virtualisation technology. Therefore, it listens to the Kubernetes API event stream for new units of execution (Pods) and runs them under a WebAssembly System Interface (WASI) runtime (notably, Mozilla's Wasmtime \cite{wasmtime}).
 
 K3s is a fully certified Kubernetes distribution geared towards Edge environments backed by a commercial company. K3s is implemented in Go and packaged as a single binary of about 50MB in size. It bundles everything needed to run Kubernetes, notably the container runtime containerd \cite{containerd}.
 
-At the time of writing, it has not been possible to implement a web server (e.g. to act as an electrical load forecasting service) and compile the application to Wasm. There is an underlying issue with implementing network servers as there is neither sufficient network API nor multi-threading support in the standard yet.
+At the time of writing, it has not been however possible to implement a portable web server (e.g. to act as an electrical load forecasting service) and compile the application to Wasm. There is an underlying issue with implementing network servers as there is neither sufficient network API nor multi-threading support in the standard yet.
+
 On the one hand, the current WebAssembly System Interface (WASI) standard only contains a few methods for working with sockets that are not enough for complete networking support. Adding support for connecting to sockets is fundamental to allow Wasm modules to connect to web servers, databases, or any service. \\
 On the other hand, the lack of concurrency primitives means that a server running in WebAssembly is single-threaded, or its implementation has to be significantly more complex (e.g. Node.js's event loop \cite{nodejs-event-loop}). This limitation severely limits the workload capabilities of the server. 
+
 Lately, the WebAssembly specifications have outlined a thread and atomics proposal intending to speed up multi-threaded applications. At this time of this writing, that proposal is still in the early stage, and it is implemented only in web browsers, behind an experimental flag.
 
 % In the field of machine learning, numerical precision matters. WASM natively supports floating-point arithmetic, whereas other popular machine learning backends like WebGL requires hardware extensions. Not all devices support this extension, which means a GPU-accelerated machine learning is not supported on some devices (e.g. older mobile devices which can run Wasm instead).
 
 % Moreover, GPU drivers can be hardware-specific and different devices can have precision problems. In WASM, computation always happens in 32-bit floats and thus have precision parity across all devices. Such numerical predictability is also paramount in blockchain applications \textcolor{red}{, as proved by Parity's interest in WebAssembly} \cite{parity-wasm}.
 
-On the other hand, we have successfully compiled the weather-based flood prediction model to Wasm. The flood prediction model is a conventional Deep Neural Network constituted by three dense layers of 32, 16 and 1 units. The model has been trained on the Cloud using the traditional machine learning framework Keras \cite{keras}. Keras provides a Python interface for artificial neural networks on top of the TensorFlow library \cite{tensorflow}.
+On the other hand, we have successfully compiled the weather-based flood prediction model to Wasm. The flood prediction model is a conventional Deep Neural Network constituted by three dense layers. The model has been trained on the Cloud using the traditional machine learning framework Keras \cite{keras}.
 
-As of the time of writing, TensorFlow provides a WebAssembly (WASM) backend for both the browser and Node.js \cite{tf-wasm}. However, the library itself cannot be easily compiled to WebAssembly yet in order to run the trained model. As a result, the model is saved to the ONNX \cite{onnx} standard format and executed by the \emph{tract} library \cite{tract}. tract is a Rust neural network inference library that can read Tensorflow or ONNX models and run data through them. The library also supports compilation to Wasm as a target.
+As of the time of writing, TensorFlow \cite{tensorflow} provides a WebAssembly backend for both the browser and Node.js \cite{tf-wasm}. However, the library itself cannot be easily compiled to WebAssembly yet in order to run the trained model. As a result, the model is saved to the alternative ONNX \cite{onnx} standard format and executed by a Rust neural network inference library (\emph{tract} \cite{tract}) that can read and run Tensorflow or ONNX models. The library in turn is compiled to Wasm as target.
 
 % We tested the feasibility of employing WebAssembly in our PoC by measuring several metrics: how long it takes to create and boot a Wasm-based Kubernetes Pod, how memory scales as the number of running Pods increases, and how both metrics compare to containers. The benchmark is a simple DateTime application that logs the current system time upon creation and goes into sleep. The Pod does not complete by going to sleep, and the resources remain allocated. The log is later retrieved using the Kubernetes API to calculate the boot time. 
 
@@ -651,6 +670,8 @@ As of the time of writing, TensorFlow provides a WebAssembly (WASM) backend for 
 \section{Related Work}
 
 TBD
+
+- \cite{abdelbaky2017computing} è solo per data processing
 
 \section{Conclusion}
 \label{sec:conclusion}
