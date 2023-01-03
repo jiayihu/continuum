@@ -5,13 +5,13 @@ The Internet has evolved enormously since its inception. From just a simple comm
 A flurry of organic changes to its infrastructure and interfaces has accompanied this vast transformation.
 
 % The pooling and sharing of compute and networking capabilities and their provisioning as a service, known as the Cloud Computing paradigm, has given individuals and enterprises alike access to practically unlimited amounts of virtualised resource components. 
-In a little over a decade of existence over the Internet, the Cloud has earned users tremendous benefits by rendering virtually unlimited quantities of computing resources available in an affordable, fit-for-purpose, and rapidly scalable manner.
+In a little over a decade of existence, the Cloud has earned web users tremendous benefits by rendering virtually unlimited quantities of infrastructure- and service-level resources available in an affordable and adaptively scalable manner.
 % The massive success of the Cloud, however, has also highlighted important deficiencies in the nature of its architecture: the huge energy footprint of its (immense) data centres; the intrinsic vulnerability to single-point failure of its centralised model; the latency caused by storing and processing in the Cloud all the data ingested at the periphery of it (allusively called the Edge); the threats to data security and privacy incurred by exposing sensitive data to Edge-Cloud transfers.
 
-Similarly, dramatic improvements in mobile connectivity occurred in the last two decades in terms of ubiquity, reliability, and affordability, have allowed anyone to access the Internet from anywhere and at any time.
+Similarly, dramatic improvements in mobile connectivity occurred in the last two decades in terms of ubiquity, reliability, and affordability, have allowed anyone to access the Internet, and effectively the Web, from anywhere and at any time.
 % The massive boost and evolution of mobile computing, which has led to the emergence of richer client-side web apps, is expected to grow further with the uptake of 5G connectivity~\cite{ericsson-5g}. The consequent impetuous growth of the Internet of Things is predicted to grow exponentially in the coming years~\cite{gartner-iot}.
 Commercial forecasts predict that by the end of 2028, over 5 billion people, over $60$/\% per cent of the world population, will have a 5G coverage subscription~\cite{ericsson-5g}, with everyday objects connected to the Internet and to each other. 
-As such "things" comprise a multitude of heterogeneous devices ranging from consumer devices, like mobile phones and wearables, to industrial sensors and actuators~\cite{chen2018edge}, this step of evolution has given exponential growth of the Internet of Things (IoT), which spans smart transportation systems, grids~\cite{mugarza2019dynamic}, and even cities \cite{cabrini2021enabling}.
+Such "things" comprise a growing multitude of heterogeneous devices ranging from consumer products, like mobile phones and wearables, to industrial sensors and actuators~\cite{chen2018edge}. The result of this evolution is an exponential growth of Internet of Things (IoT) aggregations, beyond smart transportation systems, grids~\cite{mugarza2019dynamic}, and cities \cite{cabrini2021enabling}.
 %(represented on the right in Figure~\ref{fig:continuum}).
 % The consequent impetuous growth of the Internet of Things, with the number of connected devices predicted to grow exponentially in the coming years~\cite{gartner-iot}, makes Cloud centralisation increasingly less practical~\cite{mell2011nist}.
 %As a consequence of connecting "things" to the Internet, large masses of data are being generated at unprecedented volumes, variety and velocity. 
@@ -19,14 +19,15 @@ As such "things" comprise a multitude of heterogeneous devices ranging from cons
 %Data transfer, especially at these volumes, is costly in networking pricing (e.g. ingress traffic to the Cloud and transportation) and delays actual computation.}
 %It is therefore apparent that traditional data processing methods where data is collected at the Edge and processed centrally is not sustainable. 
 
-In this arrangement, a more decentralised solution is required. The Continuum is a collective infrastructure where data processing may take place dynamically where it is deemed most convenient under any of the criteria of interest (latency, privacy, energy, etc.). The concept enables the traditional Internet and the Internet of Things to integrate into a seamless Continuum, where a multitude of as-a-service applications may be developed, deployed, and employed regardless of location~\cite{beckman2020harnessing}. The Cloud and the Edge can both benefit from forming the Continuum together, allowing Cloud-alike virtualised access to the physical world to occur in a more distributed and dynamic manner, and favouring the creation of numerous novel latency-free, private and secure, energy-savvy services.
+This arrangement intrinsically needs a decentralised, federated yet seamless organization. 
+The Continuum is a collective infrastructure where data processing may take place dynamically where it is deemed most convenient under any of the criteria of interest (latency, privacy, energy, etc.). The concept enables the traditional Internet and the Internet of Things to integrate into a seamless Continuum, where a multitude of as-a-service applications may be developed, deployed, and employed regardless of location~\cite{beckman2020harnessing}. The Cloud and the Edge can both benefit from forming the Continuum together, allowing Cloud-like virtualised access to the physical world to occur in a more distributed and dynamic manner, and favouring the creation of numerous novel latency-free, private and secure, energy-savvy services.
 
-This vision of seamless integration extends the view in literature which regards the Cloud and the IoT as distinct spaces, with the latter sending data and offloading computation to the former but not vice versa. Likewise, the concept goes beyond merely connecting network nodes to allow computation to happen at predetermined locations in the computing space. For instance, highly dynamic scenarios comprised of mobile users and diverse applications require flexible placement of data and computing for each mobile user. Figure~\ref{fig:continuum} attempts to capture said vision pictorially. 
+This vision of seamless integration extends the literature view, which regards the Cloud and the IoT as distinct spaces, with the latter sending data and offloading computation to the former but not vice versa. Likewise, the concept goes beyond merely connecting network nodes to allow computation to happen at predetermined locations in the computing space. For instance, highly dynamic scenarios comprised of mobile users and diverse applications require flexible placement of data and computing for each mobile user. Figure~\ref{fig:continuum} attempts to capture said vision pictorially. 
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/continuum}
-\caption{Pictorial view of the Continuum of Computing comprising the Edge and Cloud computing. The Edge of the network is where physical reality begins, contrarily to the Cloud where the digital components dominate.}
+\caption{Pictorial view of the Continuum of Computing comprising Edge and Cloud computing. The Edge of the network is where physical reality begins, in contrast with the Cloud where all is digital.}
 \label{fig:continuum}
 \end{figure}
 % Enacting this vision requires that sufficient compute capabilities are deployed at the Edge of the network, where physical reality begins and connected Edge devices operate as the bridge between the physical and the digital worlds.
@@ -34,7 +35,7 @@ This vision of seamless integration extends the view in literature which regards
 %\textcolor{red}{Fog computing~\cite{fog-computing} is the term coined by the research community to identify computational resources situated at a few, usually one, hop away from end users. Figure~\ref{fig: Continuum} depicts Fog nodes as base stations, which users connect to in everyday activities.}
 %This paper puts forward a vision that follows naturally from the previous premises - the \textbf{Continuum of Computing} - a ubiquitous platform where distributed on-demand resources and services on the whole computing continuum are dynamically provisioned to support different ranging services and released with minimal management effort.
 
-The foundation of the Continuum is made up of pervasive service platforms located anywhere the user is and a multitude of services, with different granularity, available over the Internet and composed opportunistically according to user needs.
+The foundation of the Continuum is made up of pervasive service platforms located anywhere the user is, and a multitude of services, with different granularity, available over the Internet and composed opportunistically according to user needs.
 %The service providers offer services, and consumers use them to accomplish any high-level application-specific goal. Services should be composed of other existing services, leveraging the principle of reuse. These services' granularity can be very different, ranging from high-level business to low-level sensing provided by the Internet of Things.
 %\textcolor{red}{In essence, the Continuum is constituted by software and hardware resources provided as-a-service, which can be delivered anywhere the user is, independent of their respective location. }
 % The Continuum must afford elastic provisioning of the end-to-end service delivery infrastructures virtualised to allow scaling as a function of user demand and service requirements. 
@@ -45,27 +46,33 @@ The foundation of the Continuum is made up of pervasive service platforms locate
 
 \paragraph{Contribution}
 
-The concept of Continuum is not entirely novel, as other authors have already described a similar vision in the past years~\cite{balouek2019towards, beckman2020harnessing}. Other researchers, such as~\cite{abdelbaky2017computing} and \cite{balouek2019towards}, have also proposed analogous visions and architectures for the Continuum, although limited to the innovation of data-driven applications. Even more interestingly, the authors of \cite{risco2021serverless} have argued the practicality of adopting the Serverless paradigm~\cite{shafiei2022serverless} for the Continuum. All the mentioned authors fall short in supporting a wide variety of applications, e.g. like long-running industrial control loops or even just mainstream Web application servers. It is, however, crucial to consider the diversity of applications from the very first stages as many aspects, like orchestration, are highly sensitive to applications and infrastructure characteristics.
+The concept of Continuum is not entirely novel, as other authors have already described a similar vision in the past~\cite{balouek2019towards, beckman2020harnessing}. Other researchers, such as~\cite{abdelbaky2017computing} and \cite{balouek2019towards}, have also proposed analogous visions and architectures for the Continuum, although limited to the innovation of data-driven applications. Even more interestingly, the authors of \cite{risco2021serverless} have argued the practicality of adopting the Serverless paradigm~\cite{shafiei2022serverless} for the Continuum. All the mentioned authors fall short in supporting a wide variety of applications, e.g. like long-running industrial control loops or even just mainstream Web app servers. Enabling the Continuum requires design-level (as oppose to merely implementation) considerations as many operational aspects of the system, for example orchestration, are highly sensitive to the specific characteristics of the hosted applications as well as of the hosting infrastructure. Our effort instead explored the use of state-of-the-art open-source technologies for building a proof of concept for the Continuum that can be application-agnostic and capable of supporting data locality and computational mobility.
 
-On the contrary, our efforts explore the adoption of open-source technologies for building a system for the Continuum that is application-agnostic and exhibits richer characteristics such as data locality and computational mobility. Our work comprises a proposition of a reference architecture for the Continuum (Section \ref{sec:technicals}), an in-depth analysis of the problem space (Section \ref{sec:challenges}) and a  Proof of Concept that adapts and integrates various state-of-the-art technologies (Section \ref{sec:technology-selection}). We adapted well-known tools in the Cloud community and technologies still at an early stage of development to gauge the distance between the Continuum vision and its actual fruition. The result of our work and the utilised tools are open-sourced and vendor-neutral, an important step forward in easing the development of future researches in the Continuum field.
+In addition to the review of related works (Section \ref{sec:RelW}), this paper presents a reference architecture for the Continuum (Section \ref{sec:technicals}), an in-depth analysis of the problem space (Section \ref{sec:challenges}), and a  Proof of Concept that adapts and integrates the selected technologies (Section \ref{sec:technology-selection}). 
+We adapted well-known tools in the Cloud community and technologies still at an early stage of development to gauge the gap between our Continuum vision and its actual fruition. 
+The result of our work, for concept and tools, are open-sourced and vendor-neutral, to favor further community efforts towards the Continuum.
 
-To the best of our knowledge, the adaptation and integration of open-source tools have only been assumed to be possible~\cite{menetrey2022webassembly}, without exploring how far this was actually true in practice. 
+To the best of our knowledge, the adaptation and integration of Continuum-oriented open-source tools have only been assumed to be possible~\cite{menetrey2022webassembly}, without exploring how far this was actually true in practice. 
 
 We first explored the feasibility of adapting mature Cloud-native tools like the Kubernetes~\cite{kubernetes} orchestrator to span over the whole Cloud-Edge Continuum. Notably, we explored the discoverability of Edge nodes in a Kubernetes cluster and the ubiquitous interoperability of web services. We also thoroughly experimented with integrating the nascent sandboxing standard WebAssembly~\cite{haas2017bringing} to bring container-like virtualisation and portability on comparatively powerful machines and constrained devices. 
 
-Our experiments show that many of today's technologies fit rather well, in principle, our vision of the Continuum. We take this as a sign of convergence in the organic evolution trends of Cloud, Edge and Web. There is still, however, a substantial gap in terms of viability. On the one hand, existing production-grade tools are still figuring out how to align their Cloud-centric interface to modern use cases like Edge computing. On the other hand, nascent solutions like WebAssembly are up-and-coming on paper in terms of designs and features but still in a state of infancy in terms of practicality. More in-depth analysis of WebAssembly is outlined in Section \ref{sec:wasm}.
+Our experiments show that many of today's technologies fit rather well, in principle, our vision of the Continuum. We take this as a sign of natural convergence in the organic evolution trends of Cloud, Edge and Web. There is still, however, a substantial gap in terms of viability. On the one hand, existing production-grade tools are still figuring out how to align their Cloud-centric interface to modern use cases like Edge computing. On the other hand, nascent solutions like WebAssembly are up-and-coming on paper in terms of designs and features but still in a state of infancy in terms of practicality. (We shall return to this discussion in Section \ref{sec:wasm}.)
 
 % Good illustrations of such points are the poor performance of interpreted WebAssembly in constrained devices and the lack of a standard networking WebAssembly interface, which hinder the practicality of any high-level service other than pure computation machine learning.
 
-\section{Related Work}
+\section{Related Work}\label{sec:RelW}
 
 \subsection{Continuum of Computing}
 
-The work in~\cite{lynn2020cloud} provides a more comprehensive view of the trend towards integrating Cloud and IoT in a Continuum, and it discusses the vision under many aspects, such as architecture, orchestration, privacy and business value. Alternatively, the researchers in~\cite{santos2021towards} and~\cite{BITTENCOURT2018134} offer a similar broad literature review regarding integrating the Edge and Cloud in a Continuum. Our work is more limited in terms of analysis of the challenges, as we restricted ourselves to those related to the presented architecture and technologies. In turn, we offer a reference architecture and a technology selection that are missing in today's literature.
+The work in~\cite{lynn2020cloud} provides a more comprehensive view of the trend towards integrating Cloud and IoT in a Continuum, and an articulate discussion of architecture, orchestration, privacy and business-value issues. 
+The authors of~\cite{santos2021towards} and~\cite{BITTENCOURT2018134} offer a similar broad literature review regarding the integration of Edge and Cloud in a Continuum. 
+Other authors have also proposed architectures for the Continuum, but their efforts were concentrated on supporting data-driven applications~\cite{risco2021serverless, balouek2019towards, abdelbaky2017computing}. 
+Our work is more limited in terms of analysis of the challenges, as we restricted ourselves to those related to the presented architecture and technologies. As part of that, we propose a reference architecture and a technology selection that are missing in today's literature.
 
-Other researchers have also proposed architectures for the Continuum, but their efforts were concentrated on supporting data-driven applications~\cite{risco2021serverless, balouek2019towards, abdelbaky2017computing}. While the magnitude of data produced by the Edge is undoubtedly a key force in driving towards data-driven workflows, the Continuum vision should be expanded to a broader audience of application types. Besides, while the mentioned researches achieve the integration of Edge and Cloud in some form, they typically fail to consider the need for service composition, uniform interfaces and portable execution throughout the Continuum. Addressing these challenges is fundamental to enabling pervasive applications with greater context awareness and mobility.
+While the magnitude of data produced by the Edge is a major driving factor behind data-driven large-scale workflows, the Continuum vision should extend to a broader range of application types. 
+Besides, while the cited research works achieve some level of integration of Edge and Cloud, they typically fail to consider the need for service composition, uniform interfaces and portable execution throughout the Continuum. Addressing these challenges is crucial to enabling pervasive applications with greater context awareness and mobility.
 
-It is also worth mentioning that the Continuum of Computing is an emerging paradigm proposed by the European HiPEAC (High-Performance Embedded Architecture and Compilation) Commission and actively promoted in its Vision for the last five years \cite{hipeac}.
+In passing, it should also be noted that the Continuum of Computing is recognized as an emerging paradigm by the HiPEAC (High-Performance Embedded Architecture and Compilation) network of excellence, sponsored by European Commission \cite{hipeac}.
 
 \subsection{Osmotic Computing}
 
@@ -75,27 +82,29 @@ Both paradigms present strong affinities to the goals and challenges of the Cont
 
 First, Osmotic Computing involves deploying microservices, a mere evolution of today's practice of building software in silos. Instead of running the entire application in the Cloud, Osmotic Computing decomposes it into microservices and deploys the latter across cloud and edge data centres. However, such microservices are not composed of services provided by a ubiquitous intermediary service platform. Osmotic services are thus limited in their context awareness, as services like city sensors are unavailable, decreasing business opportunities. Applications are built instead, at best, in numerous silos~\cite{CAMERO201984}. Indeed, the main types of microservices that the osmotic computing framework orchestrates are general-purpose microservices~\cite{villari2016osmotic}.
 
-Second, there is a difference in semantics. Osmotic computing envisions an opportunistic \textit{balancing} of microservices between the Cloud and the Edge, whereas the Continuum emphasises a wider \textit{continuity} in terms of computing. Such continuity spans from the Cloud to the extreme Edge with highly constrained devices, all seamlessly integrated into the Continuum service platform. In contrast, Osmotic Computing limits itself to comparatively powerful machines such as Raspberry Pi. For such reasons, we emphasise the importance of exploring virtualisation technologies to truly include constrained IoT nodes as active actors in the Continuum. On the contrary, the Osmotic Computing literature focuses on more resource-demanding container-based approaches.
+Second, there is a difference in semantics. Osmotic computing envisions an opportunistic \textit{balancing} of microservices between the Cloud and the Edge, whereas the Continuum emphasises a wider \textit{continuity} in terms of computing. Such continuity spans from the Cloud to the extreme Edge with highly constrained devices, all seamlessly integrated into the Continuum service platform. In contrast, Osmotic Computing limits itself to comparatively powerful machines such as Raspberry Pi. For such reasons, we emphasise the importance of exploring virtualisation technologies to truly include constrained IoT nodes as active players in the Continuum. 
+Conversely, the Osmotic Computing literature focuses on more resource-demanding container-based approaches.
 
-Third, once deployed, the Osmotic microservices are relatively stationary to the deployment location, whereas the Continuum exhibits greater levels of mobility. In case of unavailability of resources at edge/cloud, Osmotic Computing relies on solutions like message brokers (e.g. Apache Kafka) to store messages temporarily in a queued manner and resume services when the resources are available~\cite{neha2022systematic}. Contrarily, the Continuum paradigm expects the computing to fall back to the closest available location temporarily. Additionally, applications in the Continuum can move geographically to accommodate the user's movement, thanks to the seamless and ubiquitous service platform.
+Third, once deployed, the Osmotic microservices are relatively stationary to the deployment location, whereas the Continuum exhibits greater extents of (potential) mobility. In case of unavailability of resources at edge/cloud, Osmotic Computing relies on solutions like message brokers (e.g. Apache Kafka) to store messages temporarily in ad-hoc queues, awaiting to resume services when resources are available~\cite{neha2022systematic}. 
+Conversely, the Continuum paradigm expects the computation to migrate to the closest available location temporarily. Additionally, applications in the Continuum can move geographically to accommodate the user's movement, thanks to the seamless and ubiquitous service platform.
 
 \subsection{Serverless Computing}
 
 The Serverless paradigm \cite{shafiei2022serverless}, which focuses on the provision of computational functions, may seem to fit well with the premises of the Continuum. First, the Serverless programming model makes developing, deploying, and managing applications dramatically less burdensome than conventional styles.
-Second, individual functions may flexibly and equally run on the Edge or the Cloud, thus earning much portability. Furthermore, the current state of technologies we later present, like WebAssembly, plays well with the premises of Serverless, with limited resource access. Several works from the research and industry community are actively exploring the combination of WebAssembly and Serverless Edge functions with notable results \cite{gadepalli2020sledge, hall2019execution, shillaker2020faasm}. Their work, combined with the definition of serverless workflows described in \cite{risco2021serverless}, offer an intriguing proposition for the Continuum.
+Second, individual functions may flexibly and equally run on the Edge or the Cloud, thus earning much portability. Furthermore, the current state of technologies we later present, like WebAssembly, plays well with the premises of Serverless, with limited resource access. Several works from the research and industry communities are actively exploring the combination of WebAssembly and Serverless Edge functions with notable results \cite{gadepalli2020sledge, hall2019execution, shillaker2020faasm}. Their work, combined with the definition of serverless workflows described in \cite{risco2021serverless}, offer an appealing proposition for the Continuum.
 
-However, while well suited for event-driven and request-reply applications, the Serverless computing model falls short for long-running services that must feature high availability and low latency, such as industrial monitoring control loops. Provisioning and instantiating a Serverless function inevitably incur additional latency due to cold start and package download, even more in the context of unpredictable mobile user patterns and distributed networks. Other authors have also proved that it can be challenging to modify stateful applications to the Serverless paradigm, e.g. conventional web servers, since the state is not easily shared among functions~\cite{MALAWSKI2020502}.
+However, while well suited for event-driven and request-reply applications, the Serverless computing model falls short for long-running services that must feature high availability and low latency, such as industrial monitoring control loops. Provisioning and instantiating a Serverless function inevitably incur additional latency due to cold start and package download, even more in the face of unpredictable mobile user patterns and distributed networks. Other authors have also proved that it can be challenging to modify stateful applications to the Serverless paradigm, e.g. conventional web servers, since the state is not easily shared among functions~\cite{MALAWSKI2020502}.
 
-Finally, the Serverless paradigm typically requires limited execution time, limited resource access and limited specialised hardware. While these constraints enable greater scalability and mobility, it is an additional severe limitation to the scope of applications which can be deployed in the Continuum. While recent works are reducing such limitations by quickly co-locating functions in the same machine and safely sharing memory regions using the WebAssembly sandboxing \cite{shillaker2020faasm}, we deem the limitations intrinsic to the nature of the Serverless model. 
-
-The Continuum and the Serverless models are not thus one form of computing supplanting the other. On the contrary, analogously to how the growth of general-purpose container orchestration platforms like Kubernetes was necessary to pave the way for implementing Serverless platforms, we expect a similar direction for the Continuum and the Serverless. As the Edge and the Cloud become increasingly integrated, the Serverless paradigm will act as the dominant service delivery model \textit{within} the Continuum.
+Finally, the Serverless paradigm typically requires limited execution time, limited resource access and limited specialised hardware. While these restrictions allow greater scalability and mobility, they greatly reduce the scope of applications that can be deployed in them. While recent works are reducing such limitations by allowing functions to be quickly co-located in the same machine and memory regions to be safely shared using WebAssembly sandboxing \cite{shillaker2020faasm}, we deem those limitations intrinsic to the nature of the Serverless model.
+The Continuum and the Serverless models are not to be regarded as one form of computing supplanting the other. Analogously to how the growth of general-purpose container orchestration platforms like Kubernetes was necessary to pave the way for implementing Serverless platforms, we expect a similar direction for the Continuum and the Serverless ways. 
+As the Edge and the Cloud become increasingly integrated, the Serverless paradigm will likely act as the dominant service delivery model \textit{within} the Continuum.
 
 \section{A system-level view of the Continuum}
 \label{sec:technicals}
 
 \subsection{Preamble}
 Highly distributed networks are the most effective architecture for the Continuum, particularly as services become more complex and bandwidth-hungry. Although often perceived as a single entity, the Internet is actually composed of a variety of different networks. 
-The net result of such articulation is that content generated at the Edge may have to traverse multiple networks, crossing peering points before reaching its destination data centre, at the centre of the Cloud, as depicted in Figure~\ref{fig:traceroute}.
+The net result (pun intended) of such articulation is that content generated at the Edge may have to traverse multiple networks, crossing peering points before reaching its destination, at the centre of the Cloud, as depicted in Figure~\ref{fig:traceroute}.
 
 \begin{figure}[ht]
 \centering
@@ -121,7 +130,7 @@ Offloading some compute tasks from IoT sensors or actuator nodes to the Edge is 
 %Each location supports higher orders of throughput, low response times, and higher energy efficiency.}
 This strategy may not always be as convenient, though. 
 Response time is the sum of two components: compute latency and transmission latency. High compute latency can outweigh transmission efficiency. 
-Hence, the Continuum computing is responsible for determining the preferable trade-off between the two, leveraging resources across the whole path to achieve the best optimisation on a case-by-case basis and adapting dynamically based on their availability. Determining the best location for the computation to happen dynamically requires, in turn, seamless data and computation movement.
+Hence, the Continuum computing is responsible for determining the preferable trade-off between the two, leveraging resources across the whole path to achieve the best optimisation on a case-by-case basis and adapting dynamically according to availability. Determining the best location for the computation to happen dynamically requires, in turn, seamless movement of data \textit{and} computation.
 
 %\textcolor{red}{Similar attention must be paid to the energy issue. 
 %The battery is the most precious resource for things at the Edge of the network, but wireless communication module is usually very energy-hungry~\cite{shi2016edge}. For a given workload, it is not always the case that the most energy-efficient solution is to offload the whole workload to the Cloud rather than compute it locally. 
@@ -162,12 +171,12 @@ Services capture common dependencies like a database and persistent storage for 
 We leave the federation architecture as an open research question for the future of the Continuum, owing to the comparatively early stage of maturation of our concept, and the broad and challenging scope of the topic. 
 In the following, we limit ourselves to studying the infrastructure architecture, which is a fundamental enabler to the federation layer.
 
-\subsection{Infrastructure architecture}
+\subsection{Infrastructure layer architecture}
 
-The infrastructure layer comprises a set of service providers that offer data and computational resources. The data can be generated by streaming IoT devices (e.g. cameras, smartwatches, and smart infrastructure). 
-The computational resources can be heterogeneous and distributed through the infrastructure, from the Cloud to the Edge.
+The infrastructure layer comprises a set of service providers that offer data and computation resources. The data can be generated by streaming IoT devices, for example cameras, smartwatches, and other data sources typical of "smart things" environments. 
+The computation resources can be heterogeneous and distributed across the infrastructure, from the Cloud to the Edge.
 
-Figure~\ref{fig:architecture-broad} portrays the reference architecture of the Continuum infrastructure as we envision it. 
+Figure~\ref{fig:architecture-broad} portrays the reference architecture of the Continuum infrastructure we envision, whose elements we discuss next in this section.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\columnwidth]{figures/architecture-broad}
@@ -181,27 +190,27 @@ The orchestrator control plane is the core of the orchestration system. It has a
 
 \subsubsection{Compute nodes}
 
-Each machine in the cluster that is available for services and applications is a compute node. Each of these nodes implements the orchestrator agent runtime with various responsibilities. First, it collects local information, such as resource consumption metrics periodically reported to the control plane. Second, it starts and stops service instances and manages local resources via a virtualisation runtime. Finally, it monitors the instances deployed on the node, sending periodic status reports to the control plane.
+Each machine in the cluster that is available for hosting services and applications is a compute node. Each of these nodes implements the orchestrator agent runtime with various responsibilities. First, it collects local information, such as resource consumption metrics periodically reported to the control plane. Second, it starts and stops service instances and manages local resources via a virtualisation runtime. Finally, it monitors the instances deployed on the node, sending periodic status reports to the control plane.
 
-A critical requirement of the virtualisation runtime on the Compute nodes is offering a consistent execution platform independent of any underlying infrastructure to allow applications to run across all software and hardware types with the same behaviour. This aspect is fundamental due to the extreme heterogeneity of the devices in the Continuum.
+A central responsibility for the virtualisation runtime on the Compute nodes is to offer a consistent execution platform independent of any underlying infrastructure to allow applications to run across all software and hardware types with the same behaviour. This capability is a fundamental enabler owing to the extreme heterogeneity of the devices in the Continuum.
 
 \subsubsection{IoT nodes}
 
 IoT nodes are embedded devices that act as sensors or actuators, provided as services to the cluster (more on this to follow). The IoT nodes are heterogeneous in runtime implementation and communication protocols. Applications in the cluster interface with them via brokers provisioned by the cluster, as discussed in Section §\ref{p:akri}. Besides, the embedded devices support dynamic configuration by running arbitrary virtualisation modules in a lightweight runtime.
 
-Besides the requirement of interoperability between Compute nodes, the IoT runtime must as well be compatible with the application format accepted by the Compute nodes, assuming the module size and the hardware requirements can be satisfied by the limited device. Such extended service interoperability enables greater flexibility and novelty in deciding where some aspects of IoT computing, such as controlling and preprocessing, happens. 
+In addition to warranting interoperability among Compute nodes, the IoT runtime must also be compatible with the application format accepted by Compute nodes, when the module size and the hardware requirements can be satisfied by the target device. Such extended service interoperability enables greater flexibility and novelty in deciding where some aspects of IoT computing, such as controlling and preprocessing, happens. 
 
-Solving how to run an arbitrary computation on microcontrollers effectively opens the embedded world to the Continuum as an additional place of intelligent computing, rather than only as a mere data collector and dummy actuator.
+Allowing arbitrary computation to run safely on microcontrollers effectively opens the embedded world to the Continuum as an additional place of intelligent computing, rather than only as a mere data collector and dummy actuator.
 
 \subsubsection{Underlying infrastructure}
 
-One of the main requirements of the infrastructure architecture is the flexibility in being deployed on a multitude of platforms. Accordingly, the cluster machines can be either VMs on public or private Cloud infrastructures, physical machines on a cluster, or even mobile or Edge devices, among others. Such extreme diversity requires rethinking mainstream virtualization technologies in a form that does not require the application programmer to know the execution contexts preemptively.
+One of the main requirements of the infrastructure architecture is to allow deployment on a large variety of platforms. The cluster machines can be either VMs on public or private Cloud infrastructures, physical machines on a cluster, or even mobile or Edge devices, among others. Such extreme diversity requires rethinking mainstream virtualization technologies in a form that does not require the application programmer to have prior knownledge of the eventual execution contexts.
 
 \subsection{Use case: Weather-based services}\label{sec:uc}
 
-As a practical example to guide the architecture's implementation, we apply the Continuum system design to weather-based services. The emergence of efficient sensing methods and IoT technologies are giving the opportunity to record and analyse possible influences of weather factors in both mainstream areas like flood warning~\cite{brzoza2016embedded} and novel fields like electrical load forecasting~\cite{weather-load-forecasting} and precision agriculture~\cite{keswani2019adapting}.
+As a practical example to guide the architecture's implementation, we apply the Continuum system design to weather-based services. The emergence of efficient sensing methods and IoT technologies are giving the opportunity to record and analyse possible impact of weather factors on both mainstream areas like flood warning~\cite{brzoza2016embedded} and novel fields like electrical load forecasting~\cite{weather-load-forecasting} and precision agriculture~\cite{keswani2019adapting}.
 
-For instance, weather-relevant attributes are of great significance for electrical load forecasting and include values like temperature, air pressure, vapour pressure, precipitation, evaporation, wind speed, and sunshine duration. An interesting addition is that detailed weather condition data sometimes may be captured solely by household sensors, such as the indoor temperature, sunshine duration, and indoor air quality, which differentiate in every house but have a strong effect on energy consumption. These data are also typically preprocessed to anonymise and normalise the final inputs. Gathering and preprocessing this data showcases how essential it is, for many services in the Continuum, that arbitrary code may execute safely and swiftly.
+For instance, weather-relevant attributes are of great significance for electrical load forecasting and include values like temperature, air pressure, vapour pressure, precipitation, evaporation, wind speed, and sunshine duration. Interestingly, detailed weather condition data sometimes may be captured solely by household sensors, such as the indoor temperature, sunshine duration, and indoor air quality, which differentiate in every house but have a strong effect on energy consumption. These data are also typically preprocessed to anonymise and normalise the final inputs. Gathering and preprocessing this data showcases how essential it is, for many services in the Continuum, that arbitrary code may execute safely and swiftly.
 
 Additionally, typical parameters for precision agriculture are soil moisture content, soil temperature, surrounding temperature, humidity level, CO2 level of air, and sunlight intensity level. The sharing of weather parameters between electrical load forecasting and precision agriculture is, thus, an additional point in favour of sharing the data and computation on the Edge.
 
@@ -217,27 +226,29 @@ Finally, in a flood warning system, the telemetry stations acquire data (e.g. ai
 To meet the requirements of the cited types of services, we implemented a Proof of Concept system based on the architecture proposed in Figure~\ref{fig:architecture-levee}:
 
 \begin{itemize}
-    \item Sensor nodes: they are composed of sensor devices that collect data, preprocess it and transmit it to the Edge cluster for further processing. One challenging task of this layer is implementing the dynamic configuration of internal application-specific logic, as preprocessing is a necessary step presented in the case of electrical load forecasting;
-    \item Broker nodes: they expose the sensor nodes behind a common interface. The broker subscribes to the IoT data and the device periodically sends updates, which are forwarded to the cluster. The broker ensures that both parts, IoT nodes and services nodes, are independent as far as they agree to communicate following the same API interface;
-    \item Service nodes: they implement the needed services and allow them to be reused across different clusters. Internally each service can be composed of stand-alone services. We show the example of levee monitoring, which needs a streaming service to aggregate the data from the broker nodes, a local database to store the information for the analysis, and a flood prediction service to analyse the information and provide insight. 
+    \item Sensor nodes are composed of sensor devices that collect data, preprocess it and transmit it to the Edge cluster for further processing. One challenging task of this layer is implementing the dynamic configuration of internal application-specific logic, as preprocessing is a necessary step presented in the case of electrical load forecasting;
+    \item Broker nodes expose the sensor nodes behind a common interface. The broker subscribes to the IoT data and the device periodically sends updates, which are forwarded to the cluster. The broker ensures that both parts, IoT nodes and services nodes, are independent as far as they agree to communicate following the same API interface;
+    \item Service nodes implement the services needed by the system, allowing them to be reused across different clusters. Internally each service can be composed of stand-alone services. We show the example of levee monitoring, which needs a streaming service to aggregate the data from the broker nodes, a local database to store the information for the analysis, and a flood prediction service to analyse the information and provide insight. 
 \end{itemize}
 
 The service nodes are deployed at multiple Edge clusters, corresponding to different stations, and at a Cloud cluster.
 
 % The rationale for expanding the services to the Cloud is two-fold. First, the Edge clusters are heterogeneous in computing capacity, and some zones may not have enough computing power to handle streams. Leveraging the Cloud can help increase the workload at the cost of more bandwidth usage and latency. Such compromise might be acceptable, especially in the case of intensive data analysis on the sensor data.
 
-The prediction model benefits from more knowledge derived from multiple streams geographically distributed. A flood risk assessment model running in the Cloud can achieve a globally optimal solution, whereas Edge services can output only locally optimal results. On the other hand, the communication channels may become unavailable during flood threat scenarios, so the system must perform a localised assessment. Unfortunately, the loss of communication is unpredictable, but the system must quickly adapt to that eventuality. All these examples of computing dynamism advocate that the Continuum shines compared to relatively static Cloud-only, Edge-only, or pre-defined Cloud+Edge architectures.
+The prediction model benefits from more knowledge derived from multiple streams geographically distributed. A flood risk assessment model running in the Cloud can achieve a globally optimal solution, whereas Edge services can output only locally optimal results. On the other hand, the communication channels may become unavailable during flood threat scenarios, so the system must perform a localised assessment. Unfortunately, the loss of communication is unpredictable, but the system must quickly adapt to that eventuality. These instances of demand for computing dynamism show how preferable the Continuum is in comparison to relatively static Cloud-only, Edge-only, or Cloud+Edge architectures.
 
 \section{The challenges ahead}
 \label{sec:challenges}
 
-Several challenges lay ahead in the realisation of the Continuum infrastructure. Besides featuring extreme heterogeneity, current Edge technology most notably lacks support for service orientation, interoperability, orchestration, reliability, efficiency, availability, and security. We now briefly discuss each problem in isolation, and we propose a candidate technology for each. Figure~\ref{fig:challenges-technologies} presents a preliminary overview.
+Several challenges need to be addressed in the realisation of the Continuum infrastructure. 
+Besides featuring extreme heterogeneity, current Edge technology most notably lacks support for service orientation, interoperability, orchestration, reliability, efficiency, availability, and security. 
+We now briefly discuss each problem in isolation, and propose a candidate technology for each of them, which are enumerated in Table~\ref{fig:challenges-technologies}.
 
 \begin{table}
   \caption{Preliminary overview of the challenges and candidate technologies. WebAssembly is a key enabling technology in our research.}  \label{fig:challenges-technologies}
   \begin{tabular*}{\textwidth}{ | l | l }
    \toprule
-    \textbf{Challenge} & \textbf{Technology} \\
+    \textbf{Requirement / Challenge} & \textbf{Candidate    Technology} \\
    \midrule
     Service orientation & RESTful web services \\
     & Open Service Broker \\
@@ -253,7 +264,7 @@ Several challenges lay ahead in the realisation of the Continuum infrastructure.
 \end{table}
 
 \paragraph{Service orientation}\label{p:service-orientation}
-We argue that service orientation is fundamental to organise and utilise distributed capabilities that may lie under the control of different ownership domains. 
+We argue that service orientation is fundamental to organising and utilising distributed capabilities that may lie under the control of different ownership domains. 
 % A Service-Oriented Architecture (SOA) provides "a uniform mean to offer, discover, interact with and use capabilities to produce desired effects consistent with measurable preconditions and expectations"~\cite{mackenzie2006reference}.
 
 A service-oriented model is centred around a service provider that publishes its service interface (i.e., how users may access the corresponding functionalities) via a service registry where consumers may locate it and use it to bind to the desired service provider~\cite{haller2008internet}.
@@ -302,7 +313,7 @@ To achieve better efficiency, some platforms cache and reuse containers across m
 In the Edge, however, long-lived and over-provisioned containers can quickly exhaust local resource capacity, and become impractical for serving multiple IoT devices. 
 % Supporting a large number of serverless functions while warranting low response time within tens of milliseconds~\cite{elbamby2019wireless}, thus is one of the main performance challenges for resource-constrained Edge nodes.
 
-In the way of hard security, containers also offer weak isolation. To achieve stronger guarantees, they are often run in per-tenant VMs, too heavy for Edge or Fog nodes like the Raspberry Pi. 
+In the way of hard security, containers also offer weak isolation. To achieve stronger guarantees, they are often run in per-tenant VMs, too heavy for Edge-type nodes like the Raspberry Pi. 
 A light\-weight yet robust isolation solution thus is a critical step in the quest for the Continuum.
 
 \paragraph{Dynamic configuration}\label{p:dynamic-configuration}
@@ -332,8 +343,8 @@ Such flexibility is crucial for the Edge and IoT, which will undoubtedly see new
 %\textcolor{red}{A similar level of heterogeneity occurs for Cloud platforms, which typically expose proprietary interfaces in isolated vertical solutions, which very much hamper cross-platform resource integration~\cite{grozev2014inter}. }
 
 \paragraph{Portability and Programmability}\label{p:portability-and-programmability}
-In Cloud-native models of computing, users of containerisation are free to select the programming language of choice, with the sole concern to ensure that the corresponding executable image, which embeds all the necessary package libraries and configurations, can be deployed on the target platform. 
-Such images can be constructed from minimal file system layers, sharing read-only parts (e.g. base OS) with other containers, thus shedding a considerable footprint. 
+In Cloud-native models of computing, users of containerisation are free to select the programming language of choice, with the sole proviso of ensuring that the corresponding executable image, which embeds all the necessary package libraries and configurations, can be deployed on the target platform. 
+Such images can be constructed from minimal file system layers, sharing read-only parts (e.g. base OS) with other containers, thus shedding a considerable fraction of their footprint. 
 
 Conversely, in the Continuum, the compute nodes are vastly diverse for CPU (e.g., x86\_64, ARM32, ARM64, and RISC-V) and runtime, making it much harder for programmers to make native application development and deployment decently portable. 
 
@@ -343,13 +354,14 @@ However, this nice feature does not alleviate the pain of configuring and buildi
 
 % Portability also relates to programmability, in that the choice of programming language may favour or hinder portability. 
 
-\section{Technology selection}\label{sec:technology-selection}
+\section{Review of candidate technologies}\label{sec:technology-selection}
 
 \subsection{Rationale for using open-source tools}
 
 In order to address the described problems in our Proof of Concept (PoC), we adapted and integrated a variety of technologies from the industry. The resulting selection includes a mixture of well-known mainstream and experimental tools still under initial development.
 
-Using existing tools intentionally allows a realistic evaluation of the state-of-the-art to prove that there is an undeniable organic trend towards the Continuum. Besides, building over existing technologies will facilitate acceptance and ease development.
+Using existing tools intentionally allows a realistic evaluation of the state of the art. As anticipated, what transpires from it shows an evident organic trend towards the Continuum. 
+A further advantage of building over existing technologies is that their use is bound to facilitate acceptance and ease of development.
 
 \subsection{Service orientation}
 
@@ -357,7 +369,7 @@ The web has become the world's most successful vendor-independent application pl
 
 Our rationale for picking REST is threefold.\par
 First, REST resources are an information abstraction that allows servers to make any information or service available, identified via Uniform Resource Identifiers (URIs). For example, this allows the sensor nodes in our PoC to act as a server and own the resource's original state. The client negotiates and accesses a representation of it. Such representation negotiation is suitable for interoperability, caching, proxying, and redirecting requests and responses. These features enable seamless inter-operation and better availability of any kind of service in the Continuum, especially IoT-involved services. Besides, under the REST architectural paradigm, IoT nodes can advertise web links to other resources creating a distributed discoverable IoT web and resulting in an even more scalable and flexible architecture.\par
-Second, REST allows to use a uniform interface across the Continuum: clients access the server-controlled resources in a request-response fashion using a small set of methods with different semantics (GET, PUT, POST, DELETE). The requests are directed to resources using a generic interface with standard semantics that intermediaries can interpret. The result is an application that allows for layers of transformation and indirection independent of the information origin. \par
+Second, REST allows using a uniform interface across the Continuum: clients access server-controlled resources in a request-response fashion using a small set of methods with complementary semantics (GET, PUT, POST, DELETE). The requests are directed to resources that expose a generic interface with standard semantics that intermediaries can interpret. The result is an application that enables layers of transformation and indirection independent of data origin.\par
 Third and last, REST enables high-level interoperability between RESTful protocols through proxies or, more generally, intermediaries that behave as server to a client and play as client with respect to another server. REST intermediaries fit well with the assumption that not every device must offer RESTful interfaces directly. Such flexibility suitably accommodates the diversity of communication protocols on the Edge.
 
 We used these features to bring IoT nodes into the Continuum as any other service and to enable the coexistence of multiple equivalent services offered by different Cloud providers. We mapped provider-specific interfaces to uniform RESTful interfaces.
@@ -379,7 +391,7 @@ We used these features to bring IoT nodes into the Continuum as any other servic
 
 In our PoC, we realised a web-based service platform that implements the RESTful Open Service Broker (OSB) interface~\cite{osb}. Components that implement the OSB REST endpoints are referred to as service brokers and can be hosted anywhere the application platform can reach them. Service brokers offer a catalogue of services, payment plans and user-facing metadata. The main components of the OSB architecture are depicted in Figure~\ref{fig:osb}.
 
-In the Continuum platform, providers control access to services and payment plans but permit developers to add their own services to the catalogue. In this manner, we expect that over time a rich ecosystem of services may be developed and tapped from simple well-documented RESTful interfaces.
+In the Continuum platform, providers control access to services and payment plans but permit developers to add their own services to the catalogue. In this manner, we expect that a rich ecosystem of services may be developed over time, and tapped from simple well-documented RESTful interfaces.
 
 As Cloud standards still struggle to gain traction, however, we need to bridge the heterogeneity gap between platforms. 
 To this end, we used brokers to orchestrate resources at different levels within a provider. As the number of Cloud vendors is limited, building brokering layers that align access to different Clouds is an affordable endeavor. The service broker translates RESTful requests from the platform to service-specific operations such as creating, updating, deleting, and generating credentials to access the provisioned services from applications. Service brokers can offer as many services and plans as desired. Multiple service brokers can be registered with the service platform so that the final catalogue of services is the aggregate of all services. The platform is thus able to provide a rich catalogue and a consistent experience for application developers who consume these services.
@@ -394,7 +406,7 @@ The problems that arise from service dependency include whether to publish multi
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\columnwidth]{figures/coap}
+\includegraphics[width=0.6\columnwidth]{figures/coap}
 \caption{The REST architecture enhanced with CoAP. Source~\cite{bormann2012coap}.}
 \label{fig:coap}
 \end{figure}
@@ -451,7 +463,7 @@ To register the IoT devices on the Kubernetes cluster, we adopted Akri~\cite{akr
 
 Using Akri, the Kubernetes cluster can carry out dynamic discovery to use new resources as they become available and move away from decommissioned/failed resources. Discovering IoT devices is usually accomplished by scanning all connected communication interfaces and enlisting all locally available resources.
 
-Akri is also responsible for enabling applications to communicate with the device and deploying a broker Pod as intermediary. We devised the broker as a web server that abstracts the actual communication between devices and applications behind the RESTful API described Previously.
+Akri is also responsible for enabling applications to communicate with the device and deploying a broker Pod as intermediary. We devised the broker as a web server that abstracts the actual communication between devices and applications behind the RESTful API previously described.
 
 % Akri should automatically find all the devices in the environment and make them available as web resources. For instance, the agent regularly discovers the devices by scanning for CoAP resources.
 
@@ -512,13 +524,13 @@ Granular memory encapsulation means that even untrusted modules can be safely ex
 
 % as shown in Figure~\ref{fig:portability}. Notably, the Wasm backend for LLVM~\cite{llvm} works for C, C++, and Rust. Commercial solutions have also been slowly but steadily gaining popularity. Cloudflare's Service Workers~\cite{Cloudflare-workers} began to offer support for creating and hosting serverless functions in WebAssembly. In March 2019, the edge-computing platform Fastly had announced an open-sourced Lucet~\cite{fastly-lucet} that provides a compiler and runtime to enable native execution of Wasm applications and can instantiate a Wasm module within $50\mu s$, with just a few kilobytes of memory overhead. Parity is also actively experimenting with writing smart contracts using Wasm~\cite{parity-wasm}.
 
-WebAssembly is currently looked at as a candidate method for running portable applications without containers. Ideally, WebAssembly can provide significantly more lightweight isolation than VMs and containers for multi-tenant service execution. This idea is still in its infancy, but there has been some interest in recent years (\cite{hall2019execution},~\cite{gadepalli2020sledge} and~\cite{shillaker2020faasm}), especially for serverless computing.
+WebAssembly is currently looked at as a candidate method for running portable applications without containers. Ideally, WebAssembly can provide significantly more lightweight isolation than VMs and containers for multi-tenant service execution. This idea is still in its infancy, but there has been consistent interest around it in recent years (\cite{hall2019execution},~\cite{gadepalli2020sledge} and~\cite{shillaker2020faasm}), especially for serverless computing.
 
 \subsubsection{Dynamic configuration}
 
-Another strong point of WebAssembly is enabling arbitrary code execution on highly constrained devices on the Continuum. The authors of~\cite{10.1007/978-3-030-29897-5_33} and~\cite{peach2020ewasm} have also explored various WebAssembly-based mechanisms for safe arbitrary execution on constrained devices and have evaluated the trade-offs between efficient Wasm processing and memory consumption. Generally speaking, Just-In-Time compilers for WebAssembly exist (e.g. Wasmtime~\cite{wasmtime}) and receive more attention from the community, but their size and complexity make them unsuitable as yet for microcontrollers.
+Another strong point of WebAssembly is enabling arbitrary code execution on highly constrained devices across the Continuum. The authors of~\cite{10.1007/978-3-030-29897-5_33} and~\cite{peach2020ewasm} have also explored various WebAssembly-based mechanisms for safe arbitrary execution on constrained devices and have evaluated the trade-offs between efficient Wasm processing and memory consumption. Generally speaking, Just-In-Time compilers for WebAssembly exist (e.g. Wasmtime~\cite{wasmtime}) and receive more attention from the community, but their size and complexity make them unsuitable as yet for microcontrollers.
 
-Although WebAssembly interpreters can often be approximately 11x slower than native C~\cite{wasm3-performance}, they help dynamically update system code and debugging but are not yet mature in terms of performance and energy efficiency.
+Although WebAssembly interpreters can often run more than 10x slower than native C~\cite{wasm3-performance}, they help dynamically update and debug system code, but are not yet mature in terms of performance and energy efficiency.
 
 Interpreting WebAssembly on microcontrollers offers an appealing alternative to other language runtimes. The WebAssembly standard has many features that make it attractive for embedded devices~\cite{peach2020ewasm}. First, as mentioned before, WebAssembly can be generated from different source languages and run on many CPU architectures. Furthermore, many broadly used language runtimes such as JavaScript, Lua, or Python cannot provide predictable execution. They may require excessive memory for a microcontroller, whereas Wasm requires no mandatory garbage collection and only a few runtime features around maintaining memory sandboxing. This lightweight-ness is a most valuable asset in an embedded adaptation. \\
 
@@ -543,7 +555,7 @@ Figure~\ref{fig:architecture-technologies} summarises the key technologies we em
 \caption{Technology baseline for the reference infrastructure architecture.} \label{fig:architecture-technologies}
 \end{figure}
 
-We briefly also revisit our previous system for weather-based service as a representative of how the above technologies can be used in synergy:
+% We briefly also revisit our previous system for weather-based service as an illustration of how the above technologies can be used in synergy.
 
 % \begin{itemize}
 %     \item Sensor nodes: the arbitrary code execution is safely enabled by running a Rust-based WebAssembly interpreter on the Wasm binary file. The portable low-overhead Wasm format unlocks transfer of computation to dynamically instruct the sensor nodes about the preprocessing logic on a case-by-case basis;
@@ -551,14 +563,16 @@ We briefly also revisit our previous system for weather-based service as a repre
 %     \item Service nodes: they request the weather information as services to the service platform implementing the Open Service Broker API. The latter also exposes conventional services like storage, offering both locally provided solutions and Cloud-based alternatives on Google Cloud under the same RESTful interface. 
 % \end{itemize}
 
-\section{WebAssembly analysis}\label{sec:wasm}
+\section{Discussing the fitness of WebAssembly for the Continuum}\label{sec:wasm}
 
 \subsection{Rationale and devices}
 
-We now proceed with an in-depth analysis of WebAssembly. WebAssembly is the common denominator of several challenges, notably portability and virtualization, that in turn will enable other key characteristics of the Continuum, like computational mobility. As such, for this work, we decided to focus our extensive evaluation on this topic alone.
+The above discussion has shown that WebAssembly is the central common denominator to several challenges in our quest for the Continuum, notably portability and virtualization, but also an indirect enabler of other essential characteristics of the Continuum, like computational mobility. 
+As such, to conclude this paper, we focus our attention to an in-depth analysis of how WebAssembly fares technically in our prospective implementation.
 
-For the evaluation, we have used the following devices:
+We evaluate WebAssembly's fitness for Continuum purposes from two perspectives. First, we discuss its suitability as a portable binary format for pure computational services, showing its significantly smaller size than other mainstream alternatives unfit for highly constrained IoT devices. Similarly, we evaluate WebAssembly's fitness as an interpreter for the same embedded devices to understand if it can guarantee safe virtualised execution while keeping the promise of reasonable performance and predictability. Lastly, we assess WebAssembly's maturity for Cloud-like capabilities. We present a cluster of Kubernetes nodes whose virtualisation runtime is based on a Just-In-Time Wasm compiler. The nodes accept applications distributed as Wasm container images under the Open Containers Initiative Artifacts specification \cite{oci-artifacts}. The artifact represents the weather-based flood warning system we presented in Figure~\ref{fig:architecture-levee}. We used the application to examine the maturity of the Wasm System Interface and ecosystem for a traditional web server which accepts incoming network data, saves it in a local disk-based or remote cloud-based storage and outputs the result of an inference model.
 
+For the evaluation presented in this section, we have used the following devices:
 \begin{itemize}
     \item Edge cluster nodes: 4 Raspberry Pi 4 Model 3B+ with Quad-core Cortex-A53 (ARMv8) 64-bit SoC at 1.4GHz and 1 GB physical memory. The Raspberry 3B+ model has been chosen to showcase the feasibility of the presented technologies on limited low-powered machines, relatively cheap and with only 1GB of memory. Our results are comparable with other research regarding containerised virtualization over Raspberry Pi \cite{bellavista2017feasibility};
     \item Sensor nodes: STM32F407 microcontrollers with ARM Cortex-M4 core, 512KiB flash storage, and 128KiB of memory. The device is also capable of many 32-bit floating-point operations.
@@ -584,7 +598,7 @@ The results undeniably favour the Wasm binary format as the C dynamic lib is oft
 \caption{Comparison of Wasm interpreter performance and Rust native performance.} \label{fig:b-wasmi-4}
 \end{figure}
 
-Figure~\ref{fig:b-wasmi-4} plots the slowdown of the Wasm interpreter executing Polybench benchmarks on the STM32F407 microcontroller against native Rust. The results show a dramatic slowdown, with a factor of 100-400X. Such results dispel the notion of using Wasm interpreters on microcontrollers to support dynamic reconfiguration.
+Figure~\ref{fig:b-wasmi-4} plots the slowdown of the Wasm interpreter executing Polybench benchmarks on the STM32F407 microcontroller against native Rust. The results show a dramatic slowdown, with a reduction factor of 100-400x. Such results dispel the prospect of using Wasm interpreters on microcontrollers to support dynamic reconfiguration.
 However, the Wasm interpreter we used, wasmi~\cite{wasmi}, was the only available Rust WebAssembly interpreter, and we adapted it to work on embedded devices. The interpreter was designed for safe execution in the blockchain instead of efficiency in highly constrained devices. 
 % Wasmi is developed for blockchain execution; as such it is used to offer a deterministic sandboxed execution context running on Cloud servers. Accordingly, embedded execution performance is not paramount to it, unfortunately.
 Alternative embeddable interpreters, implemented in the memory-unsafe C language, show a much inferior execution penalty, in the order of 30-60x slower than native~\cite{peach2020ewasm}. Arguably, however, a 30x execution penalty can still seriously deter the usage of interpreters in microcontrollers.
@@ -612,8 +626,8 @@ K3s is a fully certified Kubernetes distribution geared towards Edge environment
 
 At the time of writing, it has yet to be possible to implement a portable web server (e.g. to act as an electrical load forecasting service) and compile the application to Wasm. There is an underlying issue with implementing network servers as there is neither sufficient network API nor multi-threading support in the standard yet.
 
-On the one hand, the current WebAssembly System Interface (WASI) standard only contains a few methods for working with sockets that are insufficient for complete networking support. Adding support for connecting to sockets is fundamental to allow Wasm modules to connect to web servers, databases, or any service. \\
-On the other hand, the lack of concurrency primitives means that a server running in WebAssembly is single-threaded, or its implementation has to be significantly more complex (e.g. Node.js's event loop~\cite{nodejs-event-loop}). This limitation severely limits the workload capabilities of the server. Lately, the WebAssembly specifications have outlined a thread and atomics proposal intending to speed up multi-threaded applications. At this time of this writing, that proposal is still in the early stage and implemented only in web browsers, behind an experimental flag.
+On the one hand, the current WebAssembly System Interface (WASI) standard only contains a few methods for working with sockets that are insufficient for complete networking support. Adding support for connecting to sockets is fundamental to allow Wasm modules to connect to web servers, databases, or any service.
+On the other hand, the lack of concurrency primitives means that a server running in WebAssembly is single-threaded, or its implementation has to be significantly more complex (e.g., like Node.js's event loop~\cite{nodejs-event-loop}). This limitation severely restricts the workload capabilities of the server. Lately, the WebAssembly specifications have outlined a thread and atomics proposal intending to speed up multi-threaded applications. At the time of this writing, however, that proposal is still in the early stage and implemented only in web browsers, behind an experimental flag.
 
 % In the field of machine learning, numerical precision matters. WASM natively supports floating-point arithmetic, whereas other popular machine learning backends like WebGL requires hardware extensions. Not all devices support this extension, which means a GPU-accelerated machine learning is not supported on some devices (e.g. older mobile devices which can run Wasm instead).
 
@@ -689,19 +703,21 @@ Finally, it is also worth mentioning that the weather-based flood prediction mod
 
 % On a different note, the number of dropped packets dramatically increases as the concurrency grows. Such behaviour is expected, and the experimental logs provide a plausible rationale. As the number of concurrent requests increases, the microcontroller network buffers cannot cope with the volume, and the packets are even truncated before being parsed. A deeper analysis should check whether the issue can be solved by allocating more buffer space or, on the contrary, is a hardware-related limit. Admittedly, the hardware network connection via jumper wires is not the most robust solution.
 
-To summarise the current state of WebAssembly, the technology's overall design is auspicious for the fits of the Continuum. In practice, the current standard and, subsequently, the industry implementations, severely limit the feasibility of applications that can be deployed on constrained and relatively powerful machines alike. The underlying theme is that the Wasm specifications (notably memory management, networking and concurrency) are not mature or robust enough for real-world application, let alone innovative Continuum services. At the time of writing, it is still the application developer's responsibility to concretely navigate the WebAssembly landscape, leading them to create ad-hoc workarounds~\cite{wasm-experimental-http} and hindering portability.
+To summarise the current state of WebAssembly, the technology's overall design is auspicious for the fits of the Continuum. In practice, the current standard and, subsequently, the industry implementations, severely limit the feasibility of applications that can be deployed on constrained and relatively powerful machines alike. The underlying theme is that the Wasm specifications (notably memory management, networking and concurrency) are not mature or robust enough as yet for real-world application, let alone innovative Continuum services. 
+At the time of writing, it is still the application developer's responsibility to concretely navigate the WebAssembly landscape, leading them to create ad-hoc workarounds~\cite{wasm-experimental-http} and hindering portability.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-This paper presents a Continuum of Computing constituted by software and hardware resources provided as a service and delivered anywhere the user is, independently of their respective location. 
-To evaluate its viability for real-world industrial applications, we uncovered the challenges the research community will have to face to make the Continuum real. 
+This paper presents a Continuum of Computing constituted by software and hardware resources provided as a service and delivered anywhere the user is, as long as equipped with a host device, independently of their respective location, without requiring static configurations.
+To evaluate the viability of this concept for real-world industrial applications, we highlighted the principal technical challenges that the research community will have to face to make the Continuum real. 
 %Admittedly, none of such challenges is easy to solve, and the current state of the candidate technologies is a perfect portrait of such hardship.
 
 % Projects like Akri for Kubernetes still are in their infancy and rated as explorative by some of the major players in the Cloud industry, notably Microsoft and Huawei. Even relatively well-adopted standards like the Open Service Broker API are still incapable of solving common problems that different stakeholders are facing, such as managing the lifecycle of chains of service dependencies.
 
 The experience reported in this paper allows us to conclude that many solutions needed by the Continuum are organically sprouting in the areas of Cloud and Edge development, which is very encouraging. Problems like IoT orchestration, service composition and multi-platform virtualisation are prominent hot challenges. Naturally, each of them has attracted interest in the last few years, and nascent solutions have emerged consequently. However, we have yet to observe any underlying governance over the evolution of these areas.
 
+WebAssembly is a prominent representative of such issue, as Wasm-based alternatives of mainstream technologies (executables, interpreters, compilers, to name a few) spontaneously emerge and advocate for its use as a glue of the Continuum. However, its development still relies heavily on unmanaged volunteer efforts, and the progress is slow and limited.
 Our empirical results show that the present WebAssembly is nearly exclusively suited for pure compute functions, which is a natural fit for the Serverless but too restricting for the Continuum. The lack of multi-threading and a mature network interface severely limit the space of real-world applications that WebAssembly can serve.
 Likewise, the results we obtained from running WebAssembly on microcontrollers discourage the idea of using its interpreters on resource-constrained nodes. On the bright side, however, we trust these problems should be overcome given sufficient time and effort by the developers' community. On this account, we anticipate WebAssembly to receive significant attention in the coming years.
 
