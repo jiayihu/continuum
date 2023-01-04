@@ -703,23 +703,37 @@ Finally, it is also worth mentioning that the weather-based flood prediction mod
 
 % On a different note, the number of dropped packets dramatically increases as the concurrency grows. Such behaviour is expected, and the experimental logs provide a plausible rationale. As the number of concurrent requests increases, the microcontroller network buffers cannot cope with the volume, and the packets are even truncated before being parsed. A deeper analysis should check whether the issue can be solved by allocating more buffer space or, on the contrary, is a hardware-related limit. Admittedly, the hardware network connection via jumper wires is not the most robust solution.
 
-To summarise the current state of WebAssembly, the technology's overall design is auspicious for the fits of the Continuum. In practice, the current standard and, subsequently, the industry implementations, severely limit the feasibility of applications that can be deployed on constrained and relatively powerful machines alike. The underlying theme is that the Wasm specifications (notably memory management, networking and concurrency) are not mature or robust enough as yet for real-world application, let alone innovative Continuum services. 
-At the time of writing, it is still the application developer's responsibility to concretely navigate the WebAssembly landscape, leading them to create ad-hoc workarounds~\cite{wasm-experimental-http} and hindering portability.
+The hands-on evaluation presented in this paper has taught two main lessons.
+On the one hand, that, in concept, the WebAssembly technology is especially fit for the Continuum as we envision it.
+On the other hand, however, that the current standard and the corresponding industrial implementations significantly penalize resource-constrained platforms, making them an exceedingly inadequate destination of applications seeking temporary hosting as part of compute mobility.
+The underlying theme is that the Wasm specifications (notably memory management, networking and concurrency) are not mature or robust enough as yet for use with real-world applications, let alone for innovative Continuum services. 
+At the time of writing, navigating the WebAssembly landscape to figure how to create ad-hoc workarounds to such limitations~\cite{wasm-experimental-http}, 
+remains a distinct (and annoying) responsibility of the application developer, which also makes portability harder to achieve.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-This paper presents a Continuum of Computing constituted by software and hardware resources provided as a service and delivered anywhere the user is, as long as equipped with a host device, independently of their respective location, without requiring static configurations.
-To evaluate the viability of this concept for real-world industrial applications, we highlighted the principal technical challenges that the research community will have to face to make the Continuum real. 
+% This paper presents a Continuum of Computing constituted by software and hardware resources provided as a service and delivered anywhere the user is, as long as equipped with a host device, independently of their respective location, without requiring static configurations.
+This paper has presented the vision of a Continuum of Computing where application and infrastructure software resources are provided as-a-service and dynamically deployed in a location-independent manner, anywhere the user is, on the sole condition of there being a nearby compute device that can act as a host, without requiring static configurations. 
+What makes this vision distinctive is that computation may move across the Continuum securely, according to a variety of preference criteria that include latency, data locality, energy, privacy.
+In this work we assessed the technical viability of this concept for real-world applications, highlighting the principal challenges that the research community interested in enabling the Compute Continuum will have to address. 
 %Admittedly, none of such challenges is easy to solve, and the current state of the candidate technologies is a perfect portrait of such hardship.
 
 % Projects like Akri for Kubernetes still are in their infancy and rated as explorative by some of the major players in the Cloud industry, notably Microsoft and Huawei. Even relatively well-adopted standards like the Open Service Broker API are still incapable of solving common problems that different stakeholders are facing, such as managing the lifecycle of chains of service dependencies.
 
-The experience reported in this paper allows us to conclude that many solutions needed by the Continuum are organically sprouting in the areas of Cloud and Edge development, which is very encouraging. Problems like IoT orchestration, service composition and multi-platform virtualisation are prominent hot challenges. Naturally, each of them has attracted interest in the last few years, and nascent solutions have emerged consequently. However, we have yet to observe any underlying governance over the evolution of these areas.
+The lessons we learned in this effort allow concluding that several of the solutions needed to enact the Continuum are organically sprouting in the areas of Cloud and Edge development, which is most encouraging. 
+Hot challenges remain to be solved, though, especially regarding service orchestration and composition across heterogeneous compute nodes with widely different resource capacities. 
+Indeed, each such challenge has attracted research interest in the last few years, and nascent solutions have emerged consequently, which however lack an underlying governance that can facilitate technical convergence.
 
-WebAssembly is a prominent representative of such issue, as Wasm-based alternatives of mainstream technologies (executables, interpreters, compilers, to name a few) spontaneously emerge and advocate for its use as a glue of the Continuum. However, its development still relies heavily on unmanaged volunteer efforts, and the progress is slow and limited.
-Our empirical results show that the present WebAssembly is nearly exclusively suited for pure compute functions, which is a natural fit for the Serverless but too restricting for the Continuum. The lack of multi-threading and a mature network interface severely limit the space of real-world applications that WebAssembly can serve.
-Likewise, the results we obtained from running WebAssembly on microcontrollers discourage the idea of using its interpreters on resource-constrained nodes. On the bright side, however, we trust these problems should be overcome given sufficient time and effort by the developers' community. On this account, we anticipate WebAssembly to receive significant attention in the coming years.
+WebAssembly is a most prominent exemplar of this problem.
+A number of Wasm-based alternatives of mainstream technologies (executables, interpreters, compilers, just to name a few) have spontaneously emerged, showing considerable potential for use as enablers of the Continuum. 
+However, their actual development still relies heavily on uncoordinated volunteer efforts resulting in slow and limited progress.
+
+Empirical results presented in this work show that the present WebAssembly is nearly exclusively suited for pure compute functions, which is a natural fit for  Serverless computing but too restrictive for the Continuum as we envision it.
+The lack of support for multi-threading and of a mature network interface severely limits the space of real-world applications that WebAssembly can serve satisfactorily.
+Likewise, the results we obtained from running WebAssembly on microcontrollers presently discourage the idea of using its interpreters on resource-constrained nodes. 
+On the bright side, however, we trust these problems can indeed be overcome given sufficient time and effort by the developers' community. 
+On this account, we anticipate WebAssembly to receive significant attention in the coming years.
 
 % \paragraph{Mobility}
 % In the Continuum, services should be relocated following the user's movements, and so should the corresponding data and state. 
